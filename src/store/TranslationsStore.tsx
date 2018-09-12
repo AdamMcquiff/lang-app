@@ -3,8 +3,8 @@ import { observable } from 'mobx';
 import RootStore from './RootStore';
 
 class TranslationStore {
-  @observable public translationCategories = [];
-  @observable public translations = [];
+  @observable public translationCategories: object[] = [];
+  @observable public translations: object[] = [];
 
   public rootStore: RootStore;
 
@@ -24,6 +24,13 @@ class TranslationStore {
       .then(response => {
         this.translations = response.data;
       }).catch(error => console.warn(error));
+  }
+
+  public createTranslationCategory(category: any) {
+    axios.post(`http://localhost:3000/categories`, category) 
+    .then(response  => {
+      this.translationCategories.push(response.data);
+    }).catch(error => console.warn(error));
   }
 }
 
