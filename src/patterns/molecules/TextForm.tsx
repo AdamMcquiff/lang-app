@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '../atoms/Button';
+import './TextForm.scss';
 
 interface ITextFormProps {
     inputLabel: string,
@@ -12,7 +13,7 @@ interface ITextFormProps {
 class TextForm extends React.Component<ITextFormProps> {
     public render() {
         return (
-            <form className="text-form">
+            <div className="m-text-form">
                 <label>
                     {this.props.inputLabel}
                     <input type="text" onChange={this.props.onTextChange} />
@@ -20,7 +21,7 @@ class TextForm extends React.Component<ITextFormProps> {
                 <Button a11yLabel={this.props.buttonA11yLabel} 
                         textLabel={this.props.buttonTextLabel}
                         onClick={this.props.onButtonClick}/>
-            </form>
+            </div>
         )
     }
 

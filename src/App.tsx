@@ -16,15 +16,12 @@ class App extends React.Component<IAppInterface> {
     this.props.store.translationStore.getTranslationData();
   }
 
-
   public render() {
     return (
       <div className="l-app">
         <Header store={this.props.store} />
 
         <main>
-          <p>I am the main</p>
-
           {this.props.store.translationStore.translationCategories.map((category: any, id: number) => {
             return <Category key={id} 
                              categoryId={category.id} 
