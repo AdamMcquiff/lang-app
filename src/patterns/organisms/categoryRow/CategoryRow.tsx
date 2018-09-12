@@ -2,9 +2,10 @@
 import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import './Category.scss';
-import TranslationStore from './store/TranslationsStore';
-import TranslationCard from './TranslationCard';
+import TranslationStore from '../../../store/TranslationsStore';
+import Button from '../../atoms/button/Button';
+import TranslationCard from '../../molecules/translationCard/TranslationCard';
+import './CategoryRow.scss';
 
 interface ICategoryProps {
   categoryId: number,
@@ -12,7 +13,7 @@ interface ICategoryProps {
 }
 
 @observer
-class Category extends React.Component<ICategoryProps> {
+class CategoryRow extends React.Component<ICategoryProps> {
   constructor(props: ICategoryProps) {
     super(props);
   }
@@ -23,16 +24,23 @@ class Category extends React.Component<ICategoryProps> {
     )
   }
 
+  public onClick() {
+    return null;
+  }
+
   public render() {
     return (
       <div className="m-category">
         {this.filteredTranslations.map((trans, id) => {
           return <TranslationCard translation={trans} key={id} />
         })}
-        <button>Add new...</button>
+        
+        <Button a11yLabel="Add new translation"
+                textLabel="Add new"
+                onClick={this.onClick} />
       </div>
     );
   }
 }
 
-export default Category;
+export default CategoryRow;

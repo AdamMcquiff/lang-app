@@ -28,9 +28,9 @@ class TranslationStore {
 
   public createTranslationCategory(category: any) {
     axios.post(`http://localhost:3000/categories`, category) 
-    .then(response  => {
-      this.translationCategories.push(response.data);
-    }).catch(error => console.warn(error));
+      .then(response  => {
+        this.translationCategories.push(response.data);
+      }).catch(error => console.warn(error));
   }
 }
 

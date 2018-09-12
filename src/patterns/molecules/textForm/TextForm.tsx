@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from '../atoms/Button';
+import Button from '../../atoms/button/Button';
 import './TextForm.scss';
 
 interface ITextFormProps {

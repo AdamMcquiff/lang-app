@@ -1,6 +1,6 @@
 import * as React from 'react';
-import RootStore from '../../store/RootStore';
-import TextForm from '../molecules/TextForm';
+import RootStore from '../../../store/RootStore';
+import TextForm from '../../molecules/textForm/TextForm';
 import './Header.scss';
 
 interface IHeaderProps {

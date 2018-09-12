@@ -15,7 +15,7 @@ class Button extends React.Component<IButtonProps> {
 
     public render() {
         return (
-            <button className="button" 
+            <button className="a-button" 
                     aria-label={this.props.a11yLabel}
                     onClick={this.props.onClick}>
                 {this.props.textLabel}

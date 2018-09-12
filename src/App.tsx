@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
-import Category from './Category';
-import Header from './patterns/organisms/Header';
+import Category from './patterns/organisms/categoryRow/CategoryRow';
+import Header from './patterns/organisms/header/Header';
 import RootStore from './store/RootStore';
 
 interface IAppInterface {
