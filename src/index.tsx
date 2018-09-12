@@ -8,7 +8,7 @@ import RootStore from './store/RootStore';
 const rootStore: RootStore = new RootStore();
 
 ReactDOM.render(
-  <App store={rootStore} />,
-  document.getElementById('root') as HTMLElement
+    <App store={rootStore} />,
+    document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
