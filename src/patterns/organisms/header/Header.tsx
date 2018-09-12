@@ -4,7 +4,8 @@ import TextForm from '../../molecules/textForm/TextForm';
 import './Header.scss';
 
 interface IHeaderProps {
-    store: RootStore
+    store: RootStore,
+    className: string
 }
 
 interface IHeaderState {
@@ -34,7 +35,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
 
     public render() {
         return (
-            <header className="o-header">
+            <header className={'o-header ' + this.props.className}>
                 <TextForm buttonA11yLabel="Add new category"
                           buttonTextLabel="Add"
                           inputLabel="New Category" 

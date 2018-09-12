@@ -2,6 +2,7 @@
 import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import * as React from 'react';
+import ITranslationModel from '../../../models/Translation';
 import TranslationStore from '../../../store/TranslationsStore';
 import Button from '../../atoms/button/Button';
 import TranslationCard from '../../molecules/translationCard/TranslationCard';
@@ -20,7 +21,7 @@ class CategoryRow extends React.Component<ICategoryProps> {
 
   @computed get filteredTranslations() {
     return this.props.translationStore.translations.filter(
-      (translation: any) => translation.categoryId === this.props.categoryId
+      (translation: ITranslationModel) => translation.categoryId === this.props.categoryId
     )
   }
 
@@ -31,7 +32,7 @@ class CategoryRow extends React.Component<ICategoryProps> {
   public render() {
     return (
       <div className="m-category">
-        {this.filteredTranslations.map((trans, id) => {
+        {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
           return <TranslationCard translation={trans} key={id} />
         })}
         

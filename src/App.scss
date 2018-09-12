@@ -1,3 +1,13 @@
 .l-app {
+  display: flex;
   text-align: center;
+
+  &__header {
+    flex: 1;
+  }
+
+  &__main {
+    flex: 6;
+    padding: 1em;
+  }
 }

@@ -9,8 +9,8 @@ interface IButtonProps {
 
 class Button extends React.Component<IButtonProps> {
     public static defaultProps = {
-        a11yLabel: 'Click me.',
-        textLabel: 'Click me.'
+        a11yLabel: 'Click me',
+        textLabel: 'Click me'
     }
 
     public render() {
