@@ -1,19 +1,34 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
+import Category from './Category';
+import RootStore from './store/RootStore';
 
-import logo from './logo.svg';
+interface IAppInterface {
+  store: RootStore
+}
 
-class App extends React.Component {
+@observer
+class App extends React.Component<IAppInterface> {
+  public componentDidMount() { 
+    this.props.store.translationStore.getTranslationCategoryData();
+    this.props.store.translationStore.getTranslationData();
+  }
+
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div className="l-app">
+        <header>
+          <p>I am a header</p>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+
+        <main>
+          <p>I am the main</p>
+
+          {this.props.store.translationStore.translationCategories.map((category: any, id: number) => {
+            return <Category categoryId={category.id} key={id} translationStore={this.props.store.translationStore}/>
+          })}
+        </main>
       </div>
     );
   }
