@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": true
+  }
+}
