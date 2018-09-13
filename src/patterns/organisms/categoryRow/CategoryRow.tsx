@@ -22,13 +22,12 @@ class CategoryRow extends React.Component<ICategoryProps> {
             (translation: ITranslationModel) => translation.categoryId === this.props.category.id
         )
     }
-        
-    constructor(props: ICategoryProps) {
-        super(props);
-        this.onAddTranslationButtonClick = this.onAddTranslationButtonClick.bind(this);
+
+    @computed get totalNumberOfTranslations() {
+        return this.filteredTranslations.length;
     }
 
-    public onAddTranslationButtonClick() {
+    public onAddTranslationButtonClick = () => {
         return this.props.translationStore.createTranslation({
             categoryId: this.props.category.id, 
             native_word: '',
@@ -37,9 +36,19 @@ class CategoryRow extends React.Component<ICategoryProps> {
     }
 
     public render() {
+        const isMultipleTranslations = this.totalNumberOfTranslations !== 1;
+        let translationLabel = 'translation';
+
+        if (isMultipleTranslations) {
+            translationLabel = 'translations';
+        }
+
         return (
             <div className="m-category-row">
                 <h2>{this.props.category.title}</h2>
+                <p>
+                    {this.totalNumberOfTranslations} {translationLabel}
+                </p>
 
                 {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
                     return <TranslationCard key={id}
