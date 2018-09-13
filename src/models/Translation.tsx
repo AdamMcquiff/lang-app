@@ -1,5 +1,5 @@
 interface ITranslationModel {
-    id: number,
+    id?: number,
     native_word: string,
     translated_word: string,
     categoryId: number

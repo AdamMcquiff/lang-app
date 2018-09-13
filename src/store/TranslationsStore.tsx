@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { observable } from 'mobx';
+import ICategoryModel from '../models/Category';
+import ITranslationModel from '../models/Translation';
 import RootStore from './RootStore';
 
 class TranslationStore {
-    @observable public translationCategories: object[] = [];
-    @observable public translations: object[] = [];
+    @observable public translationCategories: ICategoryModel[] = [];
+    @observable public translations: ITranslationModel[] = [];
 
     public rootStore: RootStore;
 
@@ -26,7 +28,7 @@ class TranslationStore {
             }).catch(error => console.warn(error));
     }
 
-    public createTranslationCategory(category: any) {
+    public createTranslationCategory(category: ICategoryModel) {
         axios.post(`http://localhost:3000/categories`, category) 
             .then(response  => {
                 this.translationCategories.push(response.data);

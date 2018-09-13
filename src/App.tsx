@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
+import ICategoryModel from './models/Category';
 import Category from './patterns/organisms/categoryRow/CategoryRow';
 import Header from './patterns/organisms/header/Header';
 import RootStore from './store/RootStore';
@@ -23,9 +24,9 @@ class App extends React.Component<IAppInterface> {
                 <Header className="l-app__header" store={this.props.store} />
 
                 <main className="l-app__main">
-                    {this.props.store.translationStore.translationCategories.map((category: any, id: number) => {
+                    {this.props.store.translationStore.translationCategories.map((category: ICategoryModel, id: number) => {
                         return <Category key={id} 
-                                         categoryId={category.id} 
+                                         category={category} 
                                          settingsStore={this.props.store.settingsStore}
                                          translationStore={this.props.store.translationStore} />
                     })}

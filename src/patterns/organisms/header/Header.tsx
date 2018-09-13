@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ICategoryModel from '../../../models/Category';
 import RootStore from '../../../store/RootStore';
 import TextForm from '../../molecules/textForm/TextForm';
 import './Header.scss';
@@ -25,7 +26,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
 
     public onAddCategoryButtonClick() {
         this.props.store.translationStore.createTranslationCategory({ 
-            name: this.state.addCategoryTextValue 
+            title: this.state.addCategoryTextValue 
         });
     }
   
@@ -41,6 +42,16 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                           inputLabel="New Category" 
                           onButtonClick={this.onAddCategoryButtonClick}
                           onTextChange={this.onAddCategoryTextChange}/>
+
+                <h2>Categories</h2>
+
+                <ul>
+                    {this.props.store.translationStore.translationCategories.map((category: ICategoryModel, id: number) => {
+                        return <li key={id}>
+                            {category.title}
+                        </li>
+                    })}
+                </ul>
             </header>
         )
     }
