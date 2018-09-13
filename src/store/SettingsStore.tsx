@@ -15,7 +15,7 @@ class SettingsStore {
         this.rootStore = rootStore
     }
 
-    public getSettingsData() {
+    public getSettings() {
         axios.get(`http://localhost:3000/settings`) 
             .then(response => {
                 this.settings = response.data;

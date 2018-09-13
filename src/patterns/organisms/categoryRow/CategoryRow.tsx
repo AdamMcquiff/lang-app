@@ -17,14 +17,24 @@ interface ICategoryProps {
 
 @observer
 class CategoryRow extends React.Component<ICategoryProps> {
+    
     @computed get filteredTranslations() {
         return this.props.translationStore.translations.filter(
             (translation: ITranslationModel) => translation.categoryId === this.props.category.id
-        )
+            )
+        }
+        
+    constructor(props: ICategoryProps) {
+        super(props);
+        this.onAddTranslationButtonClick = this.onAddTranslationButtonClick.bind(this);
     }
 
     public onAddTranslationButtonClick() {
-        return true;
+        return this.props.translationStore.createTranslation({
+            categoryId: this.props.category.id, 
+            native_word: '',
+            translated_word: ''
+        })
     }
 
     public render() {

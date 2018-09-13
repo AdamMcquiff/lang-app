@@ -13,9 +13,9 @@ interface IAppInterface {
 @observer
 class App extends React.Component<IAppInterface> {
     public componentDidMount() { 
-        this.props.store.settingsStore.getSettingsData();
-        this.props.store.translationStore.getTranslationCategoryData();
-        this.props.store.translationStore.getTranslationData();
+        this.props.store.settingsStore.getSettings();
+        this.props.store.translationStore.getTranslationCategories();
+        this.props.store.translationStore.getTranslations();
     }
 
     public render() {

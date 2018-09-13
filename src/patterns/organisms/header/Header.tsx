@@ -15,7 +15,7 @@ interface IHeaderState {
 
 class Header extends React.Component<IHeaderProps, IHeaderState> {
     public state: IHeaderState = {
-        addCategoryTextValue: ""
+        addCategoryTextValue: ''
     }
 
     constructor(props: IHeaderProps) {

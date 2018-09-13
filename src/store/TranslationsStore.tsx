@@ -12,16 +12,16 @@ class TranslationStore {
 
     constructor(rootStore: RootStore) {
         this.rootStore = rootStore
-     }
+    }
 
-    public getTranslationCategoryData() {
+    public getTranslationCategories() {
         axios.get(`http://localhost:3000/categories`) 
             .then(response => {
                 this.translationCategories = response.data;
             }).catch(error => console.warn(error));
     }
   
-    public getTranslationData() {
+    public getTranslations() {
         axios.get(`http://localhost:3000/translations`) 
             .then(response => {
                 this.translations = response.data;
@@ -35,7 +35,14 @@ class TranslationStore {
             }).catch(error => console.warn(error));
     }
 
-    public updateTranslationData(translation: ITranslationModel) {
+    public createTranslation(translation: ITranslationModel) {
+        axios.post(`http://localhost:3000/translations`, translation) 
+            .then(response  => {
+                this.translations.push(response.data);
+            }).catch(error => console.warn(error));
+    }
+
+    public updateTranslation(translation: ITranslationModel) {
         axios.put(`http://localhost:3000/translations/${translation.id}`, translation)
             .then(response => {
                 this.translations = this.translations.map(item => {

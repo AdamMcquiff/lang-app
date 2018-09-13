@@ -51,7 +51,7 @@ class TranslationCard extends React.Component<ITranslationCardProps> {
     }
 
     private _updateTranslation(translation: ITranslationModel) {
-        this.props.translationStore.updateTranslationData(translation);
+        this.props.translationStore.updateTranslation(translation);
     }
 }
 
