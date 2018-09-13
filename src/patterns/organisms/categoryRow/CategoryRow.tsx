@@ -33,7 +33,7 @@ class CategoryRow extends React.Component<ICategoryProps> {
 
     public render() {
         return (
-            <div className="m-category">
+            <div className="m-category-row">
                 <h2>{this.props.category.title}</h2>
 
                 {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
