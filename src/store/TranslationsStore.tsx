@@ -34,6 +34,18 @@ class TranslationStore {
                 this.translationCategories.push(response.data);
             }).catch(error => console.warn(error));
     }
+
+    public updateTranslationData(translation: ITranslationModel) {
+        axios.put(`http://localhost:3000/translations/${translation.id}`, translation)
+            .then(response => {
+                this.translations = this.translations.map(item => {
+                    if (item.id === translation.id) {
+                        item = translation;
+                    }
+                    return item;
+                });
+            })
+    }
 }
 
 export default TranslationStore;

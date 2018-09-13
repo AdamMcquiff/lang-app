@@ -17,17 +17,13 @@ interface ICategoryProps {
 
 @observer
 class CategoryRow extends React.Component<ICategoryProps> {
-    constructor(props: ICategoryProps) {
-        super(props);
-    }
-
     @computed get filteredTranslations() {
         return this.props.translationStore.translations.filter(
             (translation: ITranslationModel) => translation.categoryId === this.props.category.id
         )
     }
 
-    public onAddButtonClick() {
+    public onAddTranslationButtonClick() {
         return true;
     }
 
@@ -39,12 +35,13 @@ class CategoryRow extends React.Component<ICategoryProps> {
                 {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
                     return <TranslationCard key={id}
                                             translation={trans}
+                                            translationStore={this.props.translationStore}
                                             settingsStore={this.props.settingsStore} />
                 })}
         
                 <Button a11yLabel="Add new translation"
                         textLabel="Add new"
-                        onClick={this.onAddButtonClick} />
+                        onClick={this.onAddTranslationButtonClick} />
             </div>
         );
     }
