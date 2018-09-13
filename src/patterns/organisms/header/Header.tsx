@@ -18,33 +18,20 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         addCategoryTextValue: ''
     }
 
-    constructor(props: IHeaderProps) {
-        super(props);
-        this.onAddCategoryButtonClick = this.onAddCategoryButtonClick.bind(this);
-        this.onAddCategoryTextChange = this.onAddCategoryTextChange.bind(this);
-    }
-
-    public onAddCategoryButtonClick() {
+    public onAddCategoryButtonClick = () => {
         this.props.store.translationStore.createTranslationCategory({ 
             title: this.state.addCategoryTextValue 
         });
     }
   
-    public onAddCategoryTextChange(event: any) {
+    public onAddCategoryTextChange = (event: any) => {
         this.setState({ addCategoryTextValue: event.target.value })
     }
 
     public render() {
         return (
             <header className={'o-header ' + this.props.className}>
-                <TextForm buttonA11yLabel="Add new category"
-                          buttonTextLabel="Add"
-                          inputLabel="New Category" 
-                          onButtonClick={this.onAddCategoryButtonClick}
-                          onTextChange={this.onAddCategoryTextChange}/>
-
                 <h2>Categories</h2>
-
                 <ul>
                     {this.props.store.translationStore.translationCategories.map((category: ICategoryModel, id: number) => {
                         return <li key={id}>
@@ -52,6 +39,12 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                         </li>
                     })}
                 </ul>
+
+                <TextForm buttonA11yLabel="Add new category"
+                          buttonTextLabel="Add"
+                          inputLabel="New Category" 
+                          onButtonClick={this.onAddCategoryButtonClick}
+                          onTextChange={this.onAddCategoryTextChange}/>
             </header>
         )
     }

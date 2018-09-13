@@ -17,12 +17,11 @@ interface ICategoryProps {
 
 @observer
 class CategoryRow extends React.Component<ICategoryProps> {
-    
     @computed get filteredTranslations() {
         return this.props.translationStore.translations.filter(
             (translation: ITranslationModel) => translation.categoryId === this.props.category.id
-            )
-        }
+        )
+    }
         
     constructor(props: ICategoryProps) {
         super(props);

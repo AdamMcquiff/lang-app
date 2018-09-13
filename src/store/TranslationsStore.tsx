@@ -14,44 +14,44 @@ class TranslationStore {
         this.rootStore = rootStore
     }
 
-    public getTranslationCategories() {
+    public getTranslationCategories = () => {
         axios.get(`http://localhost:3000/categories`) 
             .then(response => {
                 this.translationCategories = response.data;
             }).catch(error => console.warn(error));
     }
   
-    public getTranslations() {
+    public getTranslations = () => {
         axios.get(`http://localhost:3000/translations`) 
             .then(response => {
                 this.translations = response.data;
             }).catch(error => console.warn(error));
     }
 
-    public createTranslationCategory(category: ICategoryModel) {
+    public createTranslationCategory = (category: ICategoryModel) => {
         axios.post(`http://localhost:3000/categories`, category) 
             .then(response  => {
                 this.translationCategories.push(response.data);
             }).catch(error => console.warn(error));
     }
 
-    public createTranslation(translation: ITranslationModel) {
+    public createTranslation = (translation: ITranslationModel) => {
         axios.post(`http://localhost:3000/translations`, translation) 
             .then(response  => {
                 this.translations.push(response.data);
             }).catch(error => console.warn(error));
     }
 
-    public updateTranslation(translation: ITranslationModel) {
+    public updateTranslation = (translation: ITranslationModel) => {
         axios.put(`http://localhost:3000/translations/${translation.id}`, translation)
-            .then(response => {
-                this.translations = this.translations.map(item => {
-                    if (item.id === translation.id) {
-                        item = translation;
-                    }
-                    return item;
-                });
-            })
+            .then(this.getTranslations)
+            .catch(error => console.warn(error));
+    }
+
+    public deleteTranslation = (translation: ITranslationModel) => {
+        axios.delete(`http://localhost:3000/translations/${translation.id}`)
+            .then(this.getTranslations)
+            .catch(error => console.warn(error));
     }
 }
 

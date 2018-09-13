@@ -3,6 +3,7 @@ import * as React from 'react';
 import ITranslationModel from '../../../models/Translation';
 import SettingsStore from '../../../store/SettingsStore';
 import TranslationStore from '../../../store/TranslationsStore';
+import Button from '../../atoms/button/Button';
 import './TranslationCard.scss';
 
 interface ITranslationCardProps {
@@ -13,27 +14,29 @@ interface ITranslationCardProps {
 
 @observer
 class TranslationCard extends React.Component<ITranslationCardProps> {
-    constructor(props: ITranslationCardProps) {
-        super(props);
-        this.onNativeTranslationFieldTextChange = this.onNativeTranslationFieldTextChange.bind(this);
-        this.onTranslationFieldTextChange = this.onTranslationFieldTextChange.bind(this);
-    }
-
-    public onNativeTranslationFieldTextChange(event: any) {
+    public onNativeTranslationFieldTextChange = (event: any) => {
         this._updateTranslation(
             Object.assign(this.props.translation, { native_word: event.target.value })
         );
     }
 
-    public onTranslationFieldTextChange(event: any) {
+    public onTranslationFieldTextChange = (event: any) => {
         this._updateTranslation(
             Object.assign(this.props.translation, { translated_word: event.target.value })
         );
+    }
+
+    public onDeleteTranslationButtonClick = () => {
+        this.props.translationStore.deleteTranslation(this.props.translation);
     }
     
     public render() {
         return (
             <div className="m-translation-card">
+                <Button a11yLabel={"Delete translation of " + this.props.translation.native_word}
+                        textLabel="Delete"
+                        onClick={this.onDeleteTranslationButtonClick} />
+
                 <label>
                     {this.props.settingsStore.settings.native_lang}
                     <input type="text" 

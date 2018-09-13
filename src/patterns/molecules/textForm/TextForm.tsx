@@ -15,7 +15,8 @@ class TextForm extends React.Component<ITextFormProps> {
     public render() {
         return (
             <div className="m-text-form">
-                <TextInput label={this.props.inputLabel} 
+                <TextInput textLabel={this.props.inputLabel}
+                           a11yLabel={this.props.inputLabel} 
                            onTextChange={this.props.onTextChange} />
                            
                 <Button a11yLabel={this.props.buttonA11yLabel} 
