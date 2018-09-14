@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
 import ICategoryModel from './models/Category';
-import Category from './patterns/organisms/categoryRow/CategoryRow';
+import CategoryRow from './patterns/organisms/categoryRow/CategoryRow';
 import Header from './patterns/organisms/header/Header';
 import RootStore from './store/RootStore';
 
@@ -13,9 +13,7 @@ interface IAppInterface {
 @observer
 class App extends React.Component<IAppInterface> {
     public componentDidMount() { 
-        this.props.store.settingsStore.getSettings();
-        this.props.store.translationStore.getTranslationCategories();
-        this.props.store.translationStore.getTranslations();
+        this._requestApiDataFromStore();
     }
 
     public render() {
@@ -25,14 +23,20 @@ class App extends React.Component<IAppInterface> {
 
                 <main className="l-app__main">
                     {this.props.store.translationStore.translationCategories.map((category: ICategoryModel, id: number) => {
-                        return <Category key={id} 
-                                         category={category} 
-                                         settingsStore={this.props.store.settingsStore}
-                                         translationStore={this.props.store.translationStore} />
+                        return <CategoryRow key={id} 
+                                            category={category} 
+                                            settingsStore={this.props.store.settingsStore}
+                                            translationStore={this.props.store.translationStore} />
                     })}
                 </main>
             </div>
         );
+    }
+
+    private _requestApiDataFromStore() {
+        this.props.store.settingsStore.getSettings();
+        this.props.store.translationStore.getTranslationCategories();
+        this.props.store.translationStore.getTranslations();
     }
 }
 
