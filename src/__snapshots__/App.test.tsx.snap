@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="l-app"
+>
+  <Header
+    className="l-app__header"
+    store={
+      RootStore {
+        "settingsStore": SettingsStore {
+          "rootStore": [Circular],
+          "settings": Object {
+            "native_lang": "",
+            "translated_lang": "",
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "SettingsStore@2.settings.keys",
+                "observers": Set {},
+              },
+              "name": "SettingsStore@2.settings",
+              "pendingKeys": Map {
+                "cheerio" => false,
+                "$$typeof" => false,
+                "nodeType" => false,
+                "@@__IMMUTABLE_ITERABLE__@@" => false,
+                "@@__IMMUTABLE_RECORD__@@" => false,
+                "_isMockFunction" => false,
+                "toJSON" => false,
+              },
+              "proxy": [Circular],
+              "target": Object {
+                "native_lang": "",
+                "translated_lang": "",
+                Symbol(mobx administration): [Circular],
+              },
+              "values": Map {
+                "native_lang" => "",
+                "translated_lang" => "",
+              },
+            },
+          },
+          Symbol(mobx did run lazy initializers): true,
+          Symbol(mobx administration): ObservableObjectAdministration$$1 {
+            "defaultEnhancer": [Function],
+            "keysAtom": Atom$$1 {
+              "diffValue": 0,
+              "isBeingObserved": false,
+              "isPendingUnobservation": false,
+              "lastAccessedBy": 0,
+              "lowestObserverState": 2,
+              "name": "SettingsStore@2.keys",
+              "observers": Set {},
+            },
+            "name": "SettingsStore@2",
+            "target": [Circular],
+            "values": Map {
+              "settings" => Object {
+                "native_lang": "",
+                "translated_lang": "",
+                Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                  "defaultEnhancer": [Function],
+                  "keysAtom": Atom$$1 {
+                    "diffValue": 0,
+                    "isBeingObserved": false,
+                    "isPendingUnobservation": false,
+                    "lastAccessedBy": 0,
+                    "lowestObserverState": 2,
+                    "name": "SettingsStore@2.settings.keys",
+                    "observers": Set {},
+                  },
+                  "name": "SettingsStore@2.settings",
+                  "pendingKeys": Map {
+                    "cheerio" => false,
+                    "$$typeof" => false,
+                    "nodeType" => false,
+                    "@@__IMMUTABLE_ITERABLE__@@" => false,
+                    "@@__IMMUTABLE_RECORD__@@" => false,
+                    "_isMockFunction" => false,
+                    "toJSON" => false,
+                  },
+                  "proxy": [Circular],
+                  "target": Object {
+                    "native_lang": "",
+                    "translated_lang": "",
+                    Symbol(mobx administration): [Circular],
+                  },
+                  "values": Map {
+                    "native_lang" => "",
+                    "translated_lang" => "",
+                  },
+                },
+              },
+            },
+          },
+        },
+        "translationStore": TranslationStore {
+          "createTranslation": [Function],
+          "createTranslationCategory": [Function],
+          "deleteTranslation": [Function],
+          "getTranslationCategories": [Function],
+          "getTranslations": [Function],
+          "rootStore": [Circular],
+          "translationCategories": Array [],
+          "translations": Array [],
+          "updateTranslation": [Function],
+          Symbol(mobx did run lazy initializers): true,
+          Symbol(mobx administration): ObservableObjectAdministration$$1 {
+            "defaultEnhancer": [Function],
+            "keysAtom": Atom$$1 {
+              "diffValue": 0,
+              "isBeingObserved": false,
+              "isPendingUnobservation": false,
+              "lastAccessedBy": 0,
+              "lowestObserverState": 2,
+              "name": "TranslationStore@1.keys",
+              "observers": Set {},
+            },
+            "name": "TranslationStore@1",
+            "target": [Circular],
+            "values": Map {
+              "translationCategories" => Array [],
+              "translations" => Array [],
+            },
+          },
+        },
+      }
+    }
+  />
+  <main
+    className="l-app__main"
+  />
+</div>
+`;
