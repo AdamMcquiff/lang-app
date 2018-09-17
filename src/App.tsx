@@ -1,8 +1,7 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
-import ITranslationCategoryModel from './models/TranslationCategory';
-import CategoryRow from './patterns/organisms/categoryRow/CategoryRow';
+import TranslationsLayout from './patterns/layouts/translations/TranslationsLayout';
 import Header from './patterns/organisms/header/Header';
 import RootStore from './store/RootStore';
 
@@ -26,16 +25,11 @@ class App extends React.Component<IAppInterface> {
     public render() {
         return (
             <div className="l-app">
-                <Header className="l-app__header" store={this.props.store} />
-
-                <main className="l-app__main">
-                    {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
-                        return <CategoryRow key={id} 
-                                            category={category} 
-                                            settingsStore={this.props.store.settingsStore}
-                                            translationStore={this.props.store.translationStore} />
-                    })}
-                </main>
+                <Header className="l-app__header" 
+                        store={this.props.store} />
+                        
+                <TranslationsLayout className="l-app__main" 
+                                    store={this.props.store} />
             </div>
         );
     }
