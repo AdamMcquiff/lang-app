@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 import ITranslationModel from '../../../models/Translation';
 import SettingsStore from '../../../store/SettingsStore';
-import TranslationStore from '../../../store/TranslationsStore';
+import TranslationStore from '../../../store/TranslationStore';
 import Button from '../../atoms/button/Button';
 import './TranslationCard.scss';
 
@@ -27,7 +27,7 @@ class TranslationCard extends React.Component<ITranslationCardProps> {
     }
 
     public onDeleteTranslationButtonClick = () => {
-        this.props.translationStore.deleteTranslation(this.props.translation);
+        this.props.translationStore.delete(this.props.translation);
     }
     
     public render() {
@@ -54,7 +54,7 @@ class TranslationCard extends React.Component<ITranslationCardProps> {
     }
 
     private _updateTranslation(translation: ITranslationModel) {
-        this.props.translationStore.updateTranslation(translation);
+        this.props.translationStore.update(translation);
     }
 }
 

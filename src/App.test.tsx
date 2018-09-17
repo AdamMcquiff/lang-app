@@ -11,9 +11,9 @@ describe('App', () => {
         expect(component).toMatchSnapshot();
     });
 
-    it('should call requestApiDataFromStore method during componentDidMount', () => {
-        const requestApiDataFromStoreFake = jest.spyOn<any, any>(App.prototype, '_requestApiDataFromStore');
+    it('should call requestApiDataFromServices method during componentDidMount', () => {
+        const requestApiDataFromServicesFake = jest.spyOn<any, any>(App.prototype, '_requestApiDataFromServices');
         mount(<App store={store} />);
-        expect(requestApiDataFromStoreFake).toHaveBeenCalledTimes(1);
+        expect(requestApiDataFromServicesFake).toHaveBeenCalledTimes(1);
     });
 });

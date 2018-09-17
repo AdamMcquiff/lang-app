@@ -1,16 +1,16 @@
 import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import ICategoryModel from '../../../models/Category';
 import ITranslationModel from '../../../models/Translation';
+import ITranslationCategoryModel from '../../../models/TranslationCategory';
 import SettingsStore from '../../../store/SettingsStore';
-import TranslationStore from '../../../store/TranslationsStore';
+import TranslationStore from '../../../store/TranslationStore';
 import Button from '../../atoms/button/Button';
 import TranslationCard from '../../molecules/translationCard/TranslationCard';
 import './CategoryRow.scss';
 
 interface ICategoryProps {
-    category: ICategoryModel,
+    category: ITranslationCategoryModel,
     translationStore: TranslationStore,
     settingsStore: SettingsStore
 }
@@ -28,7 +28,7 @@ class CategoryRow extends React.Component<ICategoryProps> {
     }
 
     public onAddTranslationButtonClick = () => {
-        return this.props.translationStore.createTranslation({
+        return this.props.translationStore.create({
             categoryId: this.props.category.id, 
             native_word: '',
             translated_word: ''

@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { observable } from 'mobx';
 import ISettingsModel from '../models/Settings';
+import ISettingsService from '../services/settingsService/SettingsServiceInterface';
 import RootStore from './RootStore';
 
 class SettingsStore {
@@ -10,16 +10,17 @@ class SettingsStore {
     };
 
     public rootStore: RootStore;
-
-    constructor(rootStore: RootStore) {
-        this.rootStore = rootStore
+    public service: ISettingsService;
+    
+    constructor(rootStore: RootStore, service: ISettingsService) {
+        this.rootStore = rootStore;
+        this.service = service;
     }
 
-    public getSettings() {
-        axios.get(`http://localhost:3000/settings`) 
-            .then(response => {
-                this.settings = response.data;
-            }).catch(error => console.warn(error));
+    public list() {
+        this.service.list().then((settings: ISettingsModel) => {
+            this.settings = settings;
+        });
     }
 }
 
