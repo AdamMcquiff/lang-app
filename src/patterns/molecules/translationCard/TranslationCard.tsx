@@ -43,6 +43,7 @@ class TranslationCard extends React.Component<ITranslationCardProps> {
                            defaultValue={this.props.translation.native_word}
                            onChange={this.onNativeTranslationFieldTextChange} />
                 </label>
+                
                 <label>
                     {this.props.settingsStore.settings.translated_lang}
                     <input type="text" 

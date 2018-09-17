@@ -20,7 +20,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         addCategoryTextValue: ''
     }
 
-    public onAddCategoryButtonClick = () => {
+    public onAddCategorySubmit = () => {
         this.props.store.translationCategoryStore.create({ 
             title: this.state.addCategoryTextValue 
         });
@@ -43,10 +43,9 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                     })}
                 </ul>
 
-                <TextForm buttonA11yLabel="Add new category"
-                          buttonTextLabel="Add"
+                <TextForm hasButton={false}
                           inputLabel="New Category" 
-                          onButtonClick={this.onAddCategoryButtonClick}
+                          onSubmit={this.onAddCategorySubmit}
                           onTextChange={this.onAddCategoryTextChange}/>
             </header>
         )

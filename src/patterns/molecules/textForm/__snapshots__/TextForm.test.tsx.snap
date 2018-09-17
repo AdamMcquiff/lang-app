@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextForm renders without crashing 1`] = `
+<div
+  className="m-text-form"
+>
+  <form
+    onKeyDown={[Function]}
+  >
+    <TextInput
+      a11yLabel="Some label"
+      onClick={[Function]}
+      onTextChange={[MockFunction]}
+      textLabel="Some label"
+    />
+    <Button
+      a11yLabel="Some label"
+      onClick={[MockFunction]}
+      textLabel="Some label"
+    />
+  </form>
+</div>
+`;
