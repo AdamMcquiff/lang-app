@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TranslationCard renders without crashing 1`] = `
+<div
+  className="m-translation-card"
+>
+  <Button
+    a11yLabel="Delete translation of Hello"
+    onClick={[Function]}
+    textLabel="Delete"
+  />
+  <label
+    className="m-translation-card__native-field-label"
+  >
+    <input
+      className="m-translation-card__native-field-input"
+      onChange={[Function]}
+      type="text"
+      value="Hello"
+    />
+  </label>
+  <hr />
+  <label
+    className="m-translation-card__translated-field-label"
+  >
+    <input
+      className="m-translation-card__translated-field-input"
+      onChange={[Function]}
+      type="text"
+      value="Hallo"
+    />
+  </label>
+</div>
+`;

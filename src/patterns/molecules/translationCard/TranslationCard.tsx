@@ -12,18 +12,33 @@ interface ITranslationCardProps {
     translationStore: TranslationStore,
 }
 
+interface ITranslationCardState {
+    native_word: string,
+    translated_word: string
+}
+
 @observer
-class TranslationCard extends React.Component<ITranslationCardProps> {
-    public onNativeTranslationFieldTextChange = (event: any) => {
-        this._updateTranslation(
-            Object.assign(this.props.translation, { native_word: event.target.value })
+class TranslationCard extends React.Component<ITranslationCardProps, ITranslationCardState> {
+    public state: ITranslationCardState = {
+        native_word: this.props.translation.native_word,
+        translated_word: this.props.translation.translated_word,
+    }
+
+    public componentWillUpdate() {
+        this.props.translationStore.update(
+            Object.assign(this.props.translation, { 
+                native_word: this.state.native_word,
+                translated_word: this.state.translated_word 
+            })
         );
     }
 
+    public onNativeTranslationFieldTextChange = (event: any) => {
+        this.setState({ native_word: event.target.value });
+    }
+
     public onTranslationFieldTextChange = (event: any) => {
-        this._updateTranslation(
-            Object.assign(this.props.translation, { translated_word: event.target.value })
-        );
+        this.setState({ translated_word: event.target.value });
     }
 
     public onDeleteTranslationButtonClick = () => {
@@ -37,25 +52,25 @@ class TranslationCard extends React.Component<ITranslationCardProps> {
                         textLabel="Delete"
                         onClick={this.onDeleteTranslationButtonClick} />
 
-                <label>
+                <label className="m-translation-card__native-field-label">
                     {this.props.settingsStore.settings.native_lang}
                     <input type="text" 
-                           defaultValue={this.props.translation.native_word}
+                           value={this.state.native_word} 
+                           className="m-translation-card__native-field-input"
                            onChange={this.onNativeTranslationFieldTextChange} />
                 </label>
+
+                <hr />
                 
-                <label>
+                <label className="m-translation-card__translated-field-label">
                     {this.props.settingsStore.settings.translated_lang}
                     <input type="text" 
-                           defaultValue={this.props.translation.translated_word}
+                           value={this.state.translated_word} 
+                           className="m-translation-card__translated-field-input"
                            onChange={this.onTranslationFieldTextChange} />
                 </label>
             </div>
         );
-    }
-
-    private _updateTranslation(translation: ITranslationModel) {
-        this.props.translationStore.update(translation);
     }
 }
 
