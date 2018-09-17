@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import ITranslationCategoryModel from '../../../models/TranslationCategory';
 import RootStore from '../../../store/RootStore';
@@ -9,6 +10,7 @@ interface ITranslationInterface {
     className: string
 }
 
+@observer
 class TranslationsLayout extends React.Component<ITranslationInterface> {
     public render() {
         return (

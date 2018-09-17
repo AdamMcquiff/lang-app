@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import ITranslationCategoryModel from '../../../models/TranslationCategory';
 import RootStore from '../../../store/RootStore';
@@ -13,6 +14,7 @@ interface IHeaderState {
     addCategoryTextValue: string
 }
 
+@observer
 class Header extends React.Component<IHeaderProps, IHeaderState> {
     public state: IHeaderState = {
         addCategoryTextValue: ''
@@ -32,6 +34,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         return (
             <header className={'o-header ' + this.props.className}>
                 <h2>Categories</h2>
+                
                 <ul>
                     {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
                         return <li key={id}>
