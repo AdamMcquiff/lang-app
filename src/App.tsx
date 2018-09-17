@@ -11,13 +11,6 @@ interface IAppInterface {
 
 @observer
 class App extends React.Component<IAppInterface> {
-    // move my api calls into services
-    // do not test api calls (i.e services) unless they manipulate data
-    // do not test stores unless they manipulate data
-    // create layout (generic of specific) component and have
-    // <div className="l-app"><LayoutX>...</LayoutX></div>
-    // look into router
-
     public componentDidMount() { 
         this._requestApiDataFromServices();
     }
