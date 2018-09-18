@@ -3,7 +3,7 @@
 exports[`Button renders without crashing 1`] = `
 <button
   aria-label="Click me"
-  className="a-button"
+  className="a-button "
   onClick={[Function]}
 >
   Click me

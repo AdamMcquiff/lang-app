@@ -6,6 +6,7 @@ exports[`TranslationCard renders without crashing 1`] = `
 >
   <Button
     a11yLabel="Delete translation of Hello"
+    className=""
     onClick={[Function]}
     textLabel="Delete"
   />

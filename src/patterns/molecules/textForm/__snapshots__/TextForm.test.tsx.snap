@@ -15,6 +15,7 @@ exports[`TextForm renders without crashing 1`] = `
     />
     <Button
       a11yLabel="Some label"
+      className=""
       onClick={[MockFunction]}
       textLabel="Some label"
     />

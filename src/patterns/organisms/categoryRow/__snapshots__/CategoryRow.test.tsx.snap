@@ -1,0 +1,680 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryRow renders without crashing 1`] = `
+<div
+  className="m-category-row"
+>
+  <h2>
+    Test
+  </h2>
+  <p>
+    1
+     
+    translation
+  </p>
+  <TranslationCard
+    key="0"
+    settingsStore={
+      SettingsStore {
+        "rootStore": RootStore {
+          "settingsStore": [Circular],
+          "translationCategoryStore": TranslationCategoryStore {
+            "create": [Function],
+            "list": [Function],
+            "rootStore": [Circular],
+            "service": TranslationCategoryService {},
+            "translationCategories": Array [],
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "TranslationCategoryStore@2.keys",
+                "observers": Set {},
+              },
+              "name": "TranslationCategoryStore@2",
+              "target": [Circular],
+              "values": Map {
+                "translationCategories" => Array [],
+              },
+            },
+          },
+          "translationStore": TranslationStore {
+            "create": [Function],
+            "delete": [Function],
+            "list": [Function],
+            "rootStore": [Circular],
+            "service": MockTranslationService {},
+            "translations": Array [
+              Object {
+                "categoryId": 1,
+                "native_word": "Hello",
+                "translated_word": "Hallo",
+                Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                  "defaultEnhancer": [Function],
+                  "keysAtom": Atom$$1 {
+                    "diffValue": 0,
+                    "isBeingObserved": false,
+                    "isPendingUnobservation": false,
+                    "lastAccessedBy": 0,
+                    "lowestObserverState": 2,
+                    "name": "TranslationStore@3.translations[..].keys",
+                    "observers": Set {},
+                  },
+                  "name": "TranslationStore@3.translations[..]",
+                  "pendingKeys": Map {
+                    "cheerio" => false,
+                    "$$typeof" => false,
+                    "nodeType" => false,
+                    "@@__IMMUTABLE_ITERABLE__@@" => false,
+                    "@@__IMMUTABLE_RECORD__@@" => false,
+                    "_isMockFunction" => false,
+                    "toJSON" => false,
+                  },
+                  "proxy": [Circular],
+                  "target": Object {
+                    "categoryId": 1,
+                    "native_word": "Hello",
+                    "translated_word": "Hallo",
+                    Symbol(mobx administration): [Circular],
+                  },
+                  "values": Map {
+                    "categoryId" => 1,
+                    "native_word" => "Hello",
+                    "translated_word" => "Hallo",
+                  },
+                },
+              },
+              Object {
+                "categoryId": 2,
+                "native_word": "Thanks",
+                "translated_word": "Danke",
+                Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                  "defaultEnhancer": [Function],
+                  "keysAtom": Atom$$1 {
+                    "diffValue": 0,
+                    "isBeingObserved": false,
+                    "isPendingUnobservation": false,
+                    "lastAccessedBy": 0,
+                    "lowestObserverState": 2,
+                    "name": "TranslationStore@3.translations[..].keys",
+                    "observers": Set {},
+                  },
+                  "name": "TranslationStore@3.translations[..]",
+                  "pendingKeys": Map {
+                    "cheerio" => false,
+                    "$$typeof" => false,
+                    "nodeType" => false,
+                    "@@__IMMUTABLE_ITERABLE__@@" => false,
+                    "@@__IMMUTABLE_RECORD__@@" => false,
+                    "_isMockFunction" => false,
+                    "toJSON" => false,
+                  },
+                  "proxy": [Circular],
+                  "target": Object {
+                    "categoryId": 2,
+                    "native_word": "Thanks",
+                    "translated_word": "Danke",
+                    Symbol(mobx administration): [Circular],
+                  },
+                  "values": Map {
+                    "categoryId" => 2,
+                    "native_word" => "Thanks",
+                    "translated_word" => "Danke",
+                  },
+                },
+              },
+            ],
+            "update": [Function],
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "TranslationStore@3.keys",
+                "observers": Set {},
+              },
+              "name": "TranslationStore@3",
+              "target": [Circular],
+              "values": Map {
+                "translations" => Array [
+                  Object {
+                    "categoryId": 1,
+                    "native_word": "Hello",
+                    "translated_word": "Hallo",
+                    Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                      "defaultEnhancer": [Function],
+                      "keysAtom": Atom$$1 {
+                        "diffValue": 0,
+                        "isBeingObserved": false,
+                        "isPendingUnobservation": false,
+                        "lastAccessedBy": 0,
+                        "lowestObserverState": 2,
+                        "name": "TranslationStore@3.translations[..].keys",
+                        "observers": Set {},
+                      },
+                      "name": "TranslationStore@3.translations[..]",
+                      "pendingKeys": Map {
+                        "cheerio" => false,
+                        "$$typeof" => false,
+                        "nodeType" => false,
+                        "@@__IMMUTABLE_ITERABLE__@@" => false,
+                        "@@__IMMUTABLE_RECORD__@@" => false,
+                        "_isMockFunction" => false,
+                        "toJSON" => false,
+                      },
+                      "proxy": [Circular],
+                      "target": Object {
+                        "categoryId": 1,
+                        "native_word": "Hello",
+                        "translated_word": "Hallo",
+                        Symbol(mobx administration): [Circular],
+                      },
+                      "values": Map {
+                        "categoryId" => 1,
+                        "native_word" => "Hello",
+                        "translated_word" => "Hallo",
+                      },
+                    },
+                  },
+                  Object {
+                    "categoryId": 2,
+                    "native_word": "Thanks",
+                    "translated_word": "Danke",
+                    Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                      "defaultEnhancer": [Function],
+                      "keysAtom": Atom$$1 {
+                        "diffValue": 0,
+                        "isBeingObserved": false,
+                        "isPendingUnobservation": false,
+                        "lastAccessedBy": 0,
+                        "lowestObserverState": 2,
+                        "name": "TranslationStore@3.translations[..].keys",
+                        "observers": Set {},
+                      },
+                      "name": "TranslationStore@3.translations[..]",
+                      "pendingKeys": Map {
+                        "cheerio" => false,
+                        "$$typeof" => false,
+                        "nodeType" => false,
+                        "@@__IMMUTABLE_ITERABLE__@@" => false,
+                        "@@__IMMUTABLE_RECORD__@@" => false,
+                        "_isMockFunction" => false,
+                        "toJSON" => false,
+                      },
+                      "proxy": [Circular],
+                      "target": Object {
+                        "categoryId": 2,
+                        "native_word": "Thanks",
+                        "translated_word": "Danke",
+                        Symbol(mobx administration): [Circular],
+                      },
+                      "values": Map {
+                        "categoryId" => 2,
+                        "native_word" => "Thanks",
+                        "translated_word" => "Danke",
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+        "service": SettingsService {},
+        "settings": Object {
+          "native_lang": "",
+          "translated_lang": "",
+          Symbol(mobx administration): ObservableObjectAdministration$$1 {
+            "defaultEnhancer": [Function],
+            "keysAtom": Atom$$1 {
+              "diffValue": 0,
+              "isBeingObserved": false,
+              "isPendingUnobservation": false,
+              "lastAccessedBy": 0,
+              "lowestObserverState": 2,
+              "name": "SettingsStore@1.settings.keys",
+              "observers": Set {},
+            },
+            "name": "SettingsStore@1.settings",
+            "pendingKeys": Map {
+              "cheerio" => false,
+              "$$typeof" => false,
+              "nodeType" => false,
+              "@@__IMMUTABLE_ITERABLE__@@" => false,
+              "@@__IMMUTABLE_RECORD__@@" => false,
+              "_isMockFunction" => false,
+              "toJSON" => false,
+            },
+            "proxy": [Circular],
+            "target": Object {
+              "native_lang": "",
+              "translated_lang": "",
+              Symbol(mobx administration): [Circular],
+            },
+            "values": Map {
+              "native_lang" => "",
+              "translated_lang" => "",
+            },
+          },
+        },
+        Symbol(mobx did run lazy initializers): true,
+        Symbol(mobx administration): ObservableObjectAdministration$$1 {
+          "defaultEnhancer": [Function],
+          "keysAtom": Atom$$1 {
+            "diffValue": 0,
+            "isBeingObserved": false,
+            "isPendingUnobservation": false,
+            "lastAccessedBy": 0,
+            "lowestObserverState": 2,
+            "name": "SettingsStore@1.keys",
+            "observers": Set {},
+          },
+          "name": "SettingsStore@1",
+          "target": [Circular],
+          "values": Map {
+            "settings" => Object {
+              "native_lang": "",
+              "translated_lang": "",
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "SettingsStore@1.settings.keys",
+                  "observers": Set {},
+                },
+                "name": "SettingsStore@1.settings",
+                "pendingKeys": Map {
+                  "cheerio" => false,
+                  "$$typeof" => false,
+                  "nodeType" => false,
+                  "@@__IMMUTABLE_ITERABLE__@@" => false,
+                  "@@__IMMUTABLE_RECORD__@@" => false,
+                  "_isMockFunction" => false,
+                  "toJSON" => false,
+                },
+                "proxy": [Circular],
+                "target": Object {
+                  "native_lang": "",
+                  "translated_lang": "",
+                  Symbol(mobx administration): [Circular],
+                },
+                "values": Map {
+                  "native_lang" => "",
+                  "translated_lang" => "",
+                },
+              },
+            },
+          },
+        },
+      }
+    }
+    translation={
+      Object {
+        "categoryId": 1,
+        "native_word": "Hello",
+        "translated_word": "Hallo",
+        Symbol(mobx administration): ObservableObjectAdministration$$1 {
+          "defaultEnhancer": [Function],
+          "keysAtom": Atom$$1 {
+            "diffValue": 0,
+            "isBeingObserved": false,
+            "isPendingUnobservation": false,
+            "lastAccessedBy": 0,
+            "lowestObserverState": 2,
+            "name": "TranslationStore@3.translations[..].keys",
+            "observers": Set {},
+          },
+          "name": "TranslationStore@3.translations[..]",
+          "pendingKeys": Map {
+            "cheerio" => false,
+            "$$typeof" => false,
+            "nodeType" => false,
+            "@@__IMMUTABLE_ITERABLE__@@" => false,
+            "@@__IMMUTABLE_RECORD__@@" => false,
+            "_isMockFunction" => false,
+            "toJSON" => false,
+          },
+          "proxy": [Circular],
+          "target": Object {
+            "categoryId": 1,
+            "native_word": "Hello",
+            "translated_word": "Hallo",
+            Symbol(mobx administration): [Circular],
+          },
+          "values": Map {
+            "categoryId" => 1,
+            "native_word" => "Hello",
+            "translated_word" => "Hallo",
+          },
+        },
+      }
+    }
+    translationStore={
+      TranslationStore {
+        "create": [Function],
+        "delete": [Function],
+        "list": [Function],
+        "rootStore": RootStore {
+          "settingsStore": SettingsStore {
+            "rootStore": [Circular],
+            "service": SettingsService {},
+            "settings": Object {
+              "native_lang": "",
+              "translated_lang": "",
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "SettingsStore@1.settings.keys",
+                  "observers": Set {},
+                },
+                "name": "SettingsStore@1.settings",
+                "pendingKeys": Map {
+                  "cheerio" => false,
+                  "$$typeof" => false,
+                  "nodeType" => false,
+                  "@@__IMMUTABLE_ITERABLE__@@" => false,
+                  "@@__IMMUTABLE_RECORD__@@" => false,
+                  "_isMockFunction" => false,
+                  "toJSON" => false,
+                },
+                "proxy": [Circular],
+                "target": Object {
+                  "native_lang": "",
+                  "translated_lang": "",
+                  Symbol(mobx administration): [Circular],
+                },
+                "values": Map {
+                  "native_lang" => "",
+                  "translated_lang" => "",
+                },
+              },
+            },
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "SettingsStore@1.keys",
+                "observers": Set {},
+              },
+              "name": "SettingsStore@1",
+              "target": [Circular],
+              "values": Map {
+                "settings" => Object {
+                  "native_lang": "",
+                  "translated_lang": "",
+                  Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                    "defaultEnhancer": [Function],
+                    "keysAtom": Atom$$1 {
+                      "diffValue": 0,
+                      "isBeingObserved": false,
+                      "isPendingUnobservation": false,
+                      "lastAccessedBy": 0,
+                      "lowestObserverState": 2,
+                      "name": "SettingsStore@1.settings.keys",
+                      "observers": Set {},
+                    },
+                    "name": "SettingsStore@1.settings",
+                    "pendingKeys": Map {
+                      "cheerio" => false,
+                      "$$typeof" => false,
+                      "nodeType" => false,
+                      "@@__IMMUTABLE_ITERABLE__@@" => false,
+                      "@@__IMMUTABLE_RECORD__@@" => false,
+                      "_isMockFunction" => false,
+                      "toJSON" => false,
+                    },
+                    "proxy": [Circular],
+                    "target": Object {
+                      "native_lang": "",
+                      "translated_lang": "",
+                      Symbol(mobx administration): [Circular],
+                    },
+                    "values": Map {
+                      "native_lang" => "",
+                      "translated_lang" => "",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          "translationCategoryStore": TranslationCategoryStore {
+            "create": [Function],
+            "list": [Function],
+            "rootStore": [Circular],
+            "service": TranslationCategoryService {},
+            "translationCategories": Array [],
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "TranslationCategoryStore@2.keys",
+                "observers": Set {},
+              },
+              "name": "TranslationCategoryStore@2",
+              "target": [Circular],
+              "values": Map {
+                "translationCategories" => Array [],
+              },
+            },
+          },
+          "translationStore": [Circular],
+        },
+        "service": MockTranslationService {},
+        "translations": Array [
+          Object {
+            "categoryId": 1,
+            "native_word": "Hello",
+            "translated_word": "Hallo",
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "TranslationStore@3.translations[..].keys",
+                "observers": Set {},
+              },
+              "name": "TranslationStore@3.translations[..]",
+              "pendingKeys": Map {
+                "cheerio" => false,
+                "$$typeof" => false,
+                "nodeType" => false,
+                "@@__IMMUTABLE_ITERABLE__@@" => false,
+                "@@__IMMUTABLE_RECORD__@@" => false,
+                "_isMockFunction" => false,
+                "toJSON" => false,
+              },
+              "proxy": [Circular],
+              "target": Object {
+                "categoryId": 1,
+                "native_word": "Hello",
+                "translated_word": "Hallo",
+                Symbol(mobx administration): [Circular],
+              },
+              "values": Map {
+                "categoryId" => 1,
+                "native_word" => "Hello",
+                "translated_word" => "Hallo",
+              },
+            },
+          },
+          Object {
+            "categoryId": 2,
+            "native_word": "Thanks",
+            "translated_word": "Danke",
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "TranslationStore@3.translations[..].keys",
+                "observers": Set {},
+              },
+              "name": "TranslationStore@3.translations[..]",
+              "pendingKeys": Map {
+                "cheerio" => false,
+                "$$typeof" => false,
+                "nodeType" => false,
+                "@@__IMMUTABLE_ITERABLE__@@" => false,
+                "@@__IMMUTABLE_RECORD__@@" => false,
+                "_isMockFunction" => false,
+                "toJSON" => false,
+              },
+              "proxy": [Circular],
+              "target": Object {
+                "categoryId": 2,
+                "native_word": "Thanks",
+                "translated_word": "Danke",
+                Symbol(mobx administration): [Circular],
+              },
+              "values": Map {
+                "categoryId" => 2,
+                "native_word" => "Thanks",
+                "translated_word" => "Danke",
+              },
+            },
+          },
+        ],
+        "update": [Function],
+        Symbol(mobx did run lazy initializers): true,
+        Symbol(mobx administration): ObservableObjectAdministration$$1 {
+          "defaultEnhancer": [Function],
+          "keysAtom": Atom$$1 {
+            "diffValue": 0,
+            "isBeingObserved": false,
+            "isPendingUnobservation": false,
+            "lastAccessedBy": 0,
+            "lowestObserverState": 2,
+            "name": "TranslationStore@3.keys",
+            "observers": Set {},
+          },
+          "name": "TranslationStore@3",
+          "target": [Circular],
+          "values": Map {
+            "translations" => Array [
+              Object {
+                "categoryId": 1,
+                "native_word": "Hello",
+                "translated_word": "Hallo",
+                Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                  "defaultEnhancer": [Function],
+                  "keysAtom": Atom$$1 {
+                    "diffValue": 0,
+                    "isBeingObserved": false,
+                    "isPendingUnobservation": false,
+                    "lastAccessedBy": 0,
+                    "lowestObserverState": 2,
+                    "name": "TranslationStore@3.translations[..].keys",
+                    "observers": Set {},
+                  },
+                  "name": "TranslationStore@3.translations[..]",
+                  "pendingKeys": Map {
+                    "cheerio" => false,
+                    "$$typeof" => false,
+                    "nodeType" => false,
+                    "@@__IMMUTABLE_ITERABLE__@@" => false,
+                    "@@__IMMUTABLE_RECORD__@@" => false,
+                    "_isMockFunction" => false,
+                    "toJSON" => false,
+                  },
+                  "proxy": [Circular],
+                  "target": Object {
+                    "categoryId": 1,
+                    "native_word": "Hello",
+                    "translated_word": "Hallo",
+                    Symbol(mobx administration): [Circular],
+                  },
+                  "values": Map {
+                    "categoryId" => 1,
+                    "native_word" => "Hello",
+                    "translated_word" => "Hallo",
+                  },
+                },
+              },
+              Object {
+                "categoryId": 2,
+                "native_word": "Thanks",
+                "translated_word": "Danke",
+                Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                  "defaultEnhancer": [Function],
+                  "keysAtom": Atom$$1 {
+                    "diffValue": 0,
+                    "isBeingObserved": false,
+                    "isPendingUnobservation": false,
+                    "lastAccessedBy": 0,
+                    "lowestObserverState": 2,
+                    "name": "TranslationStore@3.translations[..].keys",
+                    "observers": Set {},
+                  },
+                  "name": "TranslationStore@3.translations[..]",
+                  "pendingKeys": Map {
+                    "cheerio" => false,
+                    "$$typeof" => false,
+                    "nodeType" => false,
+                    "@@__IMMUTABLE_ITERABLE__@@" => false,
+                    "@@__IMMUTABLE_RECORD__@@" => false,
+                    "_isMockFunction" => false,
+                    "toJSON" => false,
+                  },
+                  "proxy": [Circular],
+                  "target": Object {
+                    "categoryId": 2,
+                    "native_word": "Thanks",
+                    "translated_word": "Danke",
+                    Symbol(mobx administration): [Circular],
+                  },
+                  "values": Map {
+                    "categoryId" => 2,
+                    "native_word" => "Thanks",
+                    "translated_word" => "Danke",
+                  },
+                },
+              },
+            ],
+          },
+        },
+      }
+    }
+  />
+  <Button
+    a11yLabel="Add new translation"
+    className="m-category-row__add-button"
+    onClick={[Function]}
+    textLabel="Add new"
+  />
+</div>
+`;

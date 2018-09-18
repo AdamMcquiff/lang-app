@@ -52,7 +52,7 @@ describe('TranslationCard', () => {
             .find('.m-translation-card__translated-field-input')
             .simulate('change', { target: { value: newValue } });
 
-        expect(componentWillUpdateFake).toHaveBeenCalled();   
+        expect(componentWillUpdateFake).toHaveBeenCalledTimes(1);   
         expect(component
             .find('input.m-translation-card__translated-field-input')
             .getDOMNode()
