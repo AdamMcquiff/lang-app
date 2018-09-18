@@ -42,16 +42,18 @@ describe('TranslationCard', () => {
 
     it('onTranslationFieldTextChange is called on translation field input change', () => {
         const component = mount(<TranslationCard {...props} />);
-        const componentWillUpdateFake = jest.spyOn<any, any>(component.instance(), 'componentWillUpdate');
         const newValue = "Some new value";
 
-        expect(componentWillUpdateFake).toHaveBeenCalledTimes(0);   
+        expect(component
+            .find('input.m-translation-card__translated-field-input')
+            .getDOMNode()
+            .getAttribute('value')
+        ).toEqual(translation.translated_word);   
 
         component
             .find('.m-translation-card__translated-field-input')
             .simulate('change', { target: { value: newValue } });
 
-        expect(componentWillUpdateFake).toHaveBeenCalledTimes(1);   
         expect(component
             .find('input.m-translation-card__translated-field-input')
             .getDOMNode()
@@ -61,16 +63,18 @@ describe('TranslationCard', () => {
 
     it('onNativeFieldTextChange is called on native field input change', () => {
         const component = mount(<TranslationCard {...props} />);
-        const componentWillUpdateFake = jest.spyOn<any, any>(component.instance(), 'componentWillUpdate');
         const newValue = "Some new value";
 
-        expect(componentWillUpdateFake).toHaveBeenCalledTimes(0);   
+        expect(component
+            .find('input.m-translation-card__native-field-input')
+            .getDOMNode()
+            .getAttribute('value')
+        ).toEqual(translation.native_word);
 
         component
             .find('.m-translation-card__native-field-input')
             .simulate('change', { target: { value: newValue } });
 
-        expect(componentWillUpdateFake).toHaveBeenCalled();   
         expect(component
             .find('input.m-translation-card__native-field-input')
             .getDOMNode()

@@ -8,7 +8,7 @@ class TranslationStore {
 
     public rootStore: RootStore;
     public service: ITranslationService;
-
+    
     constructor(rootStore: RootStore, service: ITranslationService) {
         this.rootStore = rootStore
         this.service = service;
@@ -28,15 +28,23 @@ class TranslationStore {
 
     public update = (translation: ITranslationModel) => {
         this.service.update(translation).then((data: ITranslationModel) => {
-            // TODO: replace with alternative
-            this.list();
+            this.translations = this.translations.map(item => {
+                if (item.id === translation.id) {
+                    item = translation;
+                }
+                return item;
+            });
         });
     }
 
     public delete = (translation: ITranslationModel) => {
         this.service.delete(translation).then(() => {
-            // TODO: replace with alternative
-            this.list();
+            this.translations = this.translations.filter(item => {
+                if (item.id !== translation.id) {
+                    return item;
+                }
+                return false;
+            });
         });
     }
 }

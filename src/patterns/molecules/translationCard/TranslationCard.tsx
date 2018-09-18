@@ -24,21 +24,12 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
         translated_word: this.props.translation.translated_word,
     }
 
-    public componentWillUpdate() {
-        this.props.translationStore.update(
-            Object.assign(this.props.translation, { 
-                native_word: this.state.native_word,
-                translated_word: this.state.translated_word 
-            })
-        );
-    }
-
     public onNativeTranslationFieldTextChange = (event: any) => {
-        this.setState({ native_word: event.target.value });
+        this.setState({ native_word: event.target.value }, () => this._updateTranslation());
     }
 
     public onTranslationFieldTextChange = (event: any) => {
-        this.setState({ translated_word: event.target.value });
+        this.setState({ translated_word: event.target.value }, () => this._updateTranslation());
     }
 
     public onDeleteTranslationButtonClick = () => {
@@ -70,6 +61,15 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
                            onChange={this.onTranslationFieldTextChange} />
                 </label>
             </div>
+        );
+    }
+
+    private _updateTranslation() {
+        this.props.translationStore.update(
+            Object.assign(this.props.translation, { 
+                native_word: this.state.native_word,
+                translated_word: this.state.translated_word 
+            })
         );
     }
 }
