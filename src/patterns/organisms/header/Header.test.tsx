@@ -18,7 +18,6 @@ describe('Header', () => {
 
     it('updates addCategoryTextValue state when TextForm value is changed', () => {
         const component = mount(<Header {...props} />);
-
         const newValue = "some value";
 
         component

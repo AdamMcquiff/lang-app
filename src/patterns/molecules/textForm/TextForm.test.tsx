@@ -19,20 +19,12 @@ describe('TextForm', () => {
 
     it('renders <button> element when hasButton is true', () => {
         const component = mount(<TextForm {...props} />);
-
-        expect(component
-            .find('.a-button')
-            .exists()
-        ).toBeTruthy();
+        expect(component.find('.a-button').exists()).toBeTruthy();
     });
 
     it('does not render <button> element when hasButton is false', () => {
         const component = mount(<TextForm inputLabel={props.inputLabel} hasButton={false}/>);
-        
-        expect(component
-            .find('.a-button')
-            .exists()
-        ).toBeFalsy();
+        expect(component.find('.a-button').exists()).toBeFalsy();
     });
 
     it('onSubmit prop method is called after form is submitted via "enter" key press down', () => {

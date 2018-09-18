@@ -43,10 +43,9 @@ describe('TranslationCard', () => {
     it('onTranslationFieldTextChange is called on translation field input change', () => {
         const component = mount(<TranslationCard {...props} />);
         const componentWillUpdateFake = jest.spyOn<any, any>(component.instance(), 'componentWillUpdate');
+        const newValue = "Some new value";
 
         expect(componentWillUpdateFake).toHaveBeenCalledTimes(0);   
-
-        const newValue = "Some new value";
 
         component
             .find('.m-translation-card__translated-field-input')
@@ -63,10 +62,9 @@ describe('TranslationCard', () => {
     it('onNativeFieldTextChange is called on native field input change', () => {
         const component = mount(<TranslationCard {...props} />);
         const componentWillUpdateFake = jest.spyOn<any, any>(component.instance(), 'componentWillUpdate');
+        const newValue = "Some new value";
 
         expect(componentWillUpdateFake).toHaveBeenCalledTimes(0);   
-
-        const newValue = "Some new value";
 
         component
             .find('.m-translation-card__native-field-input')

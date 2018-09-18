@@ -6,9 +6,7 @@ import TranslationsLayout from './TranslationsLayout';
 const store = new RootStore();
 
 describe('TranslationLayout', () => {
-    const props = {
-        store
-    };
+    const props = { store };
 
     it('renders without crashing', () => {
         const component = shallow(<TranslationsLayout {...props} />);
