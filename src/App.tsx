@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
 import TranslationsLayout from './patterns/layouts/translations/TranslationsLayout';
-import Header from './patterns/organisms/header/Header';
+import { Header } from './patterns/organisms/header/Header';
 import RootStore from './store/RootStore';
 
 interface IAppInterface {

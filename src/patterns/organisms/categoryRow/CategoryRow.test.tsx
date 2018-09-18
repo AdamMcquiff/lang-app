@@ -25,6 +25,14 @@ class MockTranslationService implements ITranslationService {
     public list(): Promise<ITranslationModel[]> {
         return Promise.resolve(translations);
     }
+
+    public update(translation: ITranslationModel) {
+        return Promise.resolve(translation);
+    }
+
+    public delete(translation: ITranslationModel) {
+        return Promise.resolve(translation);
+    }
 }
 
 const rootStore = new RootStore();

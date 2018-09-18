@@ -52,4 +52,4 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     }
 }
 
-export default Header;
+export { Header, IHeaderState };

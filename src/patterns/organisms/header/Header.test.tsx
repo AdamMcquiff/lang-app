@@ -2,7 +2,7 @@ import { mount, shallow } from 'enzyme';
 import { when } from 'mobx';
 import * as React from 'react';
 import RootStore from '../../../store/RootStore';
-import Header from './Header';
+import { Header, IHeaderState } from './Header';
 
 const store = new RootStore();
 
@@ -18,14 +18,15 @@ describe('Header', () => {
 
     it('updates addCategoryTextValue state when TextForm value is changed', () => {
         const component = mount(<Header {...props} />);
-        
+
         const newValue = "some value";
 
         component
             .find('input')
             .simulate('change', { target: { value: newValue }});
 
-        expect(component.state().addCategoryTextValue).toEqual(newValue); 
+        const state = component.state() as IHeaderState;
+        expect(state .addCategoryTextValue).toEqual(newValue); 
     });
 
     it('adds new TranslationCategory on form submit', (done) => {
