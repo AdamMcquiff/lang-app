@@ -7,7 +7,7 @@ import './TranslationsLayout.scss';
 
 interface ITranslationInterface {
     store: RootStore,
-    className: string
+    className?: string
 }
 
 @observer
