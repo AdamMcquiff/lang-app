@@ -7,7 +7,7 @@ import './Header.scss';
 
 interface IHeaderProps {
     store: RootStore,
-    className: string
+    className?: string
 }
 
 interface IHeaderState {

@@ -28,7 +28,7 @@ class CategoryRow extends React.Component<ICategoryProps> {
     }
 
     public onAddTranslationButtonClick = () => {
-        return this.props.translationStore.create({
+        this.props.translationStore.create({
             categoryId: this.props.category.id, 
             native_word: '',
             translated_word: ''
