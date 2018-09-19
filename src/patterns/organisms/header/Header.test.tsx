@@ -8,11 +8,17 @@ const store = new RootStore();
 
 describe('Header', () => {
     const props = {
-        store,
+        className: 'Some class',
+        store
     }
 
-    it('renders without crashing', () => {
+    it('renders without crashing with all props', () => {
         const component = shallow(<Header {...props} />);
+        expect(component).toMatchSnapshot();
+    });
+
+    it('renders without crashing with required props', () => {
+        const component = shallow(<Header store={props.store} />);
         expect(component).toMatchSnapshot();
     });
 
@@ -28,7 +34,7 @@ describe('Header', () => {
         expect(state .addCategoryTextValue).toEqual(newValue); 
     });
 
-    it('adds new TranslationCategory on form submit', (done) => {
+    it('creates new TranslationCategory on form submit', (done) => {
         const component = mount(<Header {...props} />);
         const instance = component.instance() as Header;
         const onAddCategorySubmitMock = jest.spyOn<any, any>(instance, 'onAddCategorySubmit');

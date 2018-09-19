@@ -27,6 +27,17 @@ class CategoryRow extends React.Component<ICategoryProps> {
         return this.filteredTranslations.length;
     }
 
+    @computed get numberOfTranslationsLabel(): string {
+        const isMultipleTranslations = this.totalNumberOfTranslations !== 1;
+        let translationLabel = 'translation';
+
+        if (isMultipleTranslations) {
+            translationLabel = 'translations';
+        }
+
+        return this.totalNumberOfTranslations + " " + translationLabel;
+    }
+
     public onAddTranslationButtonClick = () => {
         this.props.translationStore.create({
             categoryId: this.props.category.id, 
@@ -36,18 +47,11 @@ class CategoryRow extends React.Component<ICategoryProps> {
     }
 
     public render() {
-        const isMultipleTranslations = this.totalNumberOfTranslations !== 1;
-        let translationLabel = 'translation';
-
-        if (isMultipleTranslations) {
-            translationLabel = 'translations';
-        }
-
         return (
             <div className="m-category-row">
                 <h2>{this.props.category.title}</h2>
                 <p>
-                    {this.totalNumberOfTranslations} {translationLabel}
+                    {this.numberOfTranslationsLabel}
                 </p>
 
                 {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {

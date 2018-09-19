@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextForm renders without crashing 1`] = `
+exports[`TextForm renders without crashing with all props 1`] = `
 <div
   className="m-text-form"
 >
@@ -18,6 +18,29 @@ exports[`TextForm renders without crashing 1`] = `
       className=""
       onClick={[MockFunction]}
       textLabel="Some label"
+    />
+  </form>
+</div>
+`;
+
+exports[`TextForm renders without crashing with only required props 1`] = `
+<div
+  className="m-text-form"
+>
+  <form
+    onKeyDown={[Function]}
+  >
+    <TextInput
+      a11yLabel="Some label"
+      onClick={[Function]}
+      onTextChange={[Function]}
+      textLabel="Some label"
+    />
+    <Button
+      a11yLabel="Label me."
+      className=""
+      onClick={[Function]}
+      textLabel="Label me."
     />
   </form>
 </div>

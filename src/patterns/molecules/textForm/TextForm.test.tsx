@@ -12,7 +12,12 @@ describe('TextForm', () => {
         onTextChange: jest.fn(),
     };
 
-    it('renders without crashing', () => {
+    it('renders without crashing with only required props', () => {
+        const component = shallow(<TextForm inputLabel={props.inputLabel} />);
+        expect(component).toMatchSnapshot();
+    });
+
+    it('renders without crashing with all props', () => {
         const component = shallow(<TextForm {...props} />);
         expect(component).toMatchSnapshot();
     });
@@ -27,13 +32,41 @@ describe('TextForm', () => {
         expect(component.find('.a-button').exists()).toBeFalsy();
     });
 
-    it('onSubmit prop method is called after form is submitted via "enter" key press down', () => {
+    it('onSubmit prop method is called after form is submitted via button press', () => {
         const component = mount(<TextForm {...props} />);
+
+        component
+            .find('button')
+            .simulate('click');
+
+        expect(props.onSubmit).toBeCalled();
+        
+        component.unmount();
+    });
+
+    it('onSubmit prop method is called after form is submitted via "enter" key press down', () => {
+        const onSubmitMock = jest.fn();
+        const component = mount(<TextForm onSubmit={onSubmitMock} inputLabel={props.inputLabel} />);
+        
+        expect(onSubmitMock).toHaveBeenCalledTimes(0);
 
         component
             .find('form')
             .simulate('keydown', { key: 'Enter' });
 
-        expect(props.onSubmit).toBeCalled();
+        expect(onSubmitMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('onSubmit class method is not called after user presses "arrow down" key', () => {
+        const onSubmitMock = jest.fn();
+        const component = mount(<TextForm onSubmit={onSubmitMock} inputLabel={props.inputLabel} />);
+
+        expect(onSubmitMock).toHaveBeenCalledTimes(0);
+
+        component
+            .find('form')
+            .simulate('keydown', { key: 40 });
+
+        expect(onSubmitMock).toHaveBeenCalledTimes(0);
     });
 });

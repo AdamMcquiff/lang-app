@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TranslationCard renders without crashing 1`] = `
+exports[`TranslationCard renders without crashing with all props 1`] = `
 <div
   className="m-translation-card"
 >

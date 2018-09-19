@@ -54,9 +54,15 @@ describe('CategoryRow', () => {
         rootStore.translationStore.list();
     });
 
-    it('renders without crashing', () => {
+    it('renders without crashing with all props', () => {
         const component = shallow(<CategoryRow {...props} />);
         expect(component).toMatchSnapshot();
+    });
+
+    it('has label that correctly displays number of translations with 1 translation', () => {
+        const component = mount(<CategoryRow {...props} />);
+        const label = component.find('p').text();
+        expect(label).toEqual("1 translation");
     });
 
     it('computed filteredTranslations method should contain one translation object', () => {

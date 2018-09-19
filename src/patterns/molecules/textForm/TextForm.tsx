@@ -32,7 +32,7 @@ class TextForm extends React.Component<ITextFormProps> {
                     {this.props.hasButton &&
                         <Button a11yLabel={this.props.buttonA11yLabel} 
                                 textLabel={this.props.buttonTextLabel}
-                                onClick={this.props.onSubmit}/>
+                                onClick={this.props.onSubmit} />
                     }   
                 </form>
             </div>

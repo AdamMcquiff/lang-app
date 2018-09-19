@@ -9,8 +9,13 @@ describe('TextInput', () => {
         textLabel: "Some label"
     };
 
-    it('renders without crashing', () => {
+    it('renders without crashing with no props', () => {
         const component = shallow(<TextInput />);
+        expect(component).toMatchSnapshot();
+    });
+
+    it('renders without crashing with all props', () => {
+        const component = shallow(<TextInput {...props} />);
         expect(component).toMatchSnapshot();
     });
 

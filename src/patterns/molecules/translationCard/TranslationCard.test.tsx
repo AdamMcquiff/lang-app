@@ -19,7 +19,7 @@ describe('TranslationCard', () => {
         translationStore: rootStore.translationStore,
     }
 
-    it('renders without crashing', () => {
+    it('renders without crashing with all props', () => {
         const component = shallow(<TranslationCard {...props} />);
         expect(component).toMatchSnapshot();
     });
@@ -70,7 +70,7 @@ describe('TranslationCard', () => {
             .getDOMNode()
             .getAttribute('value')
         ).toEqual(translation.native_word);
-
+        
         component
             .find('.m-translation-card__native-field-input')
             .simulate('change', { target: { value: newValue } });
