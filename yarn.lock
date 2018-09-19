@@ -7841,6 +7841,10 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+tinyreset@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tinyreset/-/tinyreset-1.0.1.tgz#8fb9281b0756c453c6140e7e6c6d2365088936f7"
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
