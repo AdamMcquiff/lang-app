@@ -176,6 +176,10 @@ module.exports = {
               },
               {
                 loader: require.resolve('sass-loader'),
+                options: {
+                  data: '@import "styles/base.scss";',
+                  includePaths:[__dirname, 'src']
+                },
               },
               {
                 loader: require.resolve('postcss-loader'),
