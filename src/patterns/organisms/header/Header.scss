@@ -1,3 +1,7 @@
 .o-header {
   padding: 1em;
+
+  h2 {
+    @include type-setting(1);
+  }
 }
