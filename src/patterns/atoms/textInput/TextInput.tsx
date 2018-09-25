@@ -2,15 +2,21 @@ import * as React from 'react';
 import './TextInput.scss';
 
 interface ITextInputProps {
-    textLabel: string,
     a11yLabel: string,
+    textLabel: string,
+    placeholder: string,
+    hasBackground: boolean,
+    hasLabel: boolean,
     onTextChange?: (e: any) => void
 }
 
 class TextInput extends React.Component<ITextInputProps> {
     public static defaultProps = {
         a11yLabel: 'Give me a label',
+        hasBackground: true,
+        hasLabel: true,
         onClick: () => null,
+        placeholder: '',
         textLabel: 'Give me a label',
     }
 
@@ -23,12 +29,14 @@ class TextInput extends React.Component<ITextInputProps> {
                 </span>
                 
                 <span className="a-text-input__text-label"
-                      aria-hidden={true}>
+                      aria-hidden={true}
+                      hidden={!this.props.hasLabel}>
                     {this.props.textLabel}
                 </span>
 
-                <input className="a-text-input__field"
+                <input className={'a-text-input__field ' + (!this.props.hasBackground ? 'a-text-input__field--transparent' : '')}
                        onChange={this.props.onTextChange}
+                       placeholder={this.props.placeholder}
                        type="text" />
             </label>
         )

@@ -1,3 +1,17 @@
 .a-text-input {
-    background-color: $dark-blue;
+    
+    &__field {
+        background-color: $dark-blue;
+        color: $white;
+        border: 0;
+        border-radius: $border-radius;
+        padding: .75em;
+        font-size: 1em;
+
+        &--transparent {
+            @include placeholder { color: $gray; }
+            background-color: transparent;
+            color: $black;
+        }
+    }
 }

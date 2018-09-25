@@ -1,4 +1,10 @@
 @import './colours';
+@import './sizes';
+@import './mixins';
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: sans-serif;

@@ -7,7 +7,10 @@ interface ITextFormProps {
     inputLabel: string,
     buttonTextLabel: string,
     buttonA11yLabel: string,
+    placeholder: string,
+    hasBackground: boolean,
     hasButton: boolean,
+    hasLabel: boolean,
     onSubmit(): void,
     onTextChange(e: any): void,
 }
@@ -16,9 +19,12 @@ class TextForm extends React.Component<ITextFormProps> {
     public static defaultProps = {
         buttonA11yLabel: 'Label me.',
         buttonTextLabel: 'Label me.',
+        hasBackground: true,
         hasButton: true,
+        hasLabel: true,
         onSubmit: () => null,
         onTextChange: () => null,
+        placeholder: '',
     }
     
     public render() {
@@ -27,6 +33,9 @@ class TextForm extends React.Component<ITextFormProps> {
                 <form onKeyDown={this.onSubmit}>
                     <TextInput textLabel={this.props.inputLabel}
                                a11yLabel={this.props.inputLabel} 
+                               placeholder={this.props.placeholder}
+                               hasLabel={this.props.hasLabel}
+                               hasBackground={this.props.hasBackground}
                                onTextChange={this.props.onTextChange} />
                             
                     {this.props.hasButton &&

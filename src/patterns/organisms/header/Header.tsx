@@ -44,7 +44,10 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                 </ul>
 
                 <TextForm hasButton={false}
+                          hasBackground={false}
+                          hasLabel={false}
                           inputLabel="New Category" 
+                          placeholder="New Category"
                           onSubmit={this.onAddCategorySubmit}
                           onTextChange={this.onAddCategoryTextChange}/>
             </header>
