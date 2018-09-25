@@ -34,6 +34,16 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         this.setState({ addCategoryTextValue: event.target.value })
     }
 
+    public onDeleteTranslationCategoryButtonClick = (event: any) => {
+        const category = this.props.store.translationCategoryStore.translationCategories.find(item =>
+            parseInt(event.target.value, 10) === item.id
+        );
+
+        if (category) {
+            this.props.store.translationCategoryStore.delete(category);
+        }
+    }
+
     public render() {
         return (
             <header className={'o-header ' + this.props.className}>
@@ -44,7 +54,9 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                         <ul>
                             {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
                                 return <li key={id}>
-                                    <button aria-label={'Delete ' + category.title} />
+                                    <button aria-label={'Delete ' + category.title} 
+                                            value={category.id}
+                                            onClick={this.onDeleteTranslationCategoryButtonClick}/>
                                     {category.title}
                                 </li>
                             })}

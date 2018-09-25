@@ -11,12 +11,20 @@ class TranslationCategoryService implements ITranslationCategoryService {
         });
     }
 
-    public create(translation: ITranslationCategoryModel): Promise<ITranslationCategoryModel> {
+    public create(category: ITranslationCategoryModel): Promise<ITranslationCategoryModel> {
         return new Promise((resolve, reject) => {
-            return axios.post(`http://localhost:3000/categories`, translation) 
+            return axios.post(`http://localhost:3000/categories`, category) 
                 .then(response => resolve(response.data))
                 .catch(error => reject(error));
         });
+    }
+
+    public delete(category: ITranslationCategoryModel): Promise<ITranslationCategoryModel> { 
+        return new Promise((resolve, reject) => {
+            return axios.delete(`http://localhost:3000/categories/${category.id}`)
+                .then(response => resolve(response.data))
+                .catch(error => reject(error));
+        });    
     }
 }
 

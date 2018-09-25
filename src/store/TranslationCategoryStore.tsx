@@ -25,6 +25,17 @@ class TranslationCategoryStore {
             this.translationCategories.push(data);
         });
     }
+
+    public delete = (category: ITranslationCategoryModel) => {
+        this.service.delete(category).then(() => {
+            this.translationCategories = this.translationCategories.filter(item => {
+                if (item.id !== category.id) {
+                    return item;
+                }
+                return false;
+            });
+        });
+    }
 }
 
 export default TranslationCategoryStore;
