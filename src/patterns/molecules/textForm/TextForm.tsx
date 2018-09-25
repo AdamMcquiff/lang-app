@@ -52,9 +52,13 @@ class TextForm extends React.Component<ITextFormProps> {
         if (e.key !== 'Enter') {
             return;
         }
+        
+        const input = Object.assign({}, e);
 
         e.preventDefault();
         this.props.onSubmit();
+        
+        input.target.value = "";
     }
 }
 

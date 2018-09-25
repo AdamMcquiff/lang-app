@@ -28,10 +28,12 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         this.props.store.translationCategoryStore.create({ 
             title: this.state.addCategoryTextValue 
         });
+
+        this.setState({ addCategoryTextValue: '' });
     }
   
     public onAddCategoryTextChange = (event: any) => {
-        this.setState({ addCategoryTextValue: event.target.value })
+        this.setState({ addCategoryTextValue: event.target.value });
     }
 
     public onDeleteTranslationCategoryButtonClick = (event: any) => {
@@ -49,27 +51,26 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
             <header className={'o-header ' + this.props.className}>
                 <section className="o-header__categories">
                     <h2>Categories</h2>
-                    
-                    <div className="o-header__categories__body">
-                        <ul>
-                            {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
-                                return <li key={id}>
-                                    <button aria-label={'Delete ' + category.title} 
-                                            value={category.id}
-                                            onClick={this.onDeleteTranslationCategoryButtonClick}/>
-                                    {category.title}
-                                </li>
-                            })}
-                        </ul>
 
-                        <TextForm hasButton={false}
-                                  hasBackground={false}
-                                  hasLabel={false}
-                                  inputLabel="New Category" 
-                                  placeholder="New Category"
-                                  onSubmit={this.onAddCategorySubmit}
-                                  onTextChange={this.onAddCategoryTextChange}/>
-                    </div>
+                    <ul>
+                        {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
+                            return <li key={id}>
+                                <button aria-label={'Delete ' + category.title} 
+                                        value={category.id}
+                                        onClick={this.onDeleteTranslationCategoryButtonClick} />
+                                        
+                                {category.title}
+                            </li>
+                        })}
+                    </ul>
+
+                    <TextForm hasButton={false}
+                              hasBackground={false}
+                              hasLabel={false}
+                              inputLabel="New Category" 
+                              placeholder="New Category"
+                              onSubmit={this.onAddCategorySubmit}
+                              onTextChange={this.onAddCategoryTextChange} />
                 </section>
             </header>
         )

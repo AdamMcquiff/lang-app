@@ -1,8 +1,9 @@
 .o-header {
-  background-color: $dark-blue;
+  background-color: $darker-blue;
   font-family: $muli;
   color: $white;
   padding: 1em;
+  min-height: 100vh;
 
   h2 {
     @include type-setting(1);
@@ -10,7 +11,8 @@
   }
 
   &__categories {
-    &__body {
+    > ul,
+    > div {
       padding: { left: 1.5em; }
     }
   }

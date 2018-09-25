@@ -1,3 +1,31 @@
 .m-translation-card {
-  text-align: center;
+    background-color: $lightest-blue;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 1.25em;
+
+    input {
+        font-size: 1.75em;
+        display: block;
+        border: 0;
+        margin-top: .325em;
+        background-color: transparent;
+        color: $darkest-blue;
+        width: 100%;
+    }
+
+    label {
+        color: $lighter-blue;
+        font-family: $open-sans;
+    }
+
+    hr {
+        border: 1px solid $lighter-blue;
+        opacity: .25;
+        margin: 1em -1.25em;
+    }
+
+    button {
+        display: none;
+    }
 }
