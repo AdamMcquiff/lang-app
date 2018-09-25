@@ -48,24 +48,29 @@ class CategoryRow extends React.Component<ICategoryProps> {
 
     public render() {
         return (
-            <div className="m-category-row">
-                <h2>{this.props.category.title}</h2>
-                <p>
-                    {this.numberOfTranslationsLabel}
-                </p>
+            <section className="m-category-row">
+                <header>
+                    <h2>{this.props.category.title}</h2>
+                    <p>
+                        {this.numberOfTranslationsLabel}
+                    </p>
+                </header>
 
-                {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
-                    return <TranslationCard key={id}
-                                            translation={trans}
-                                            translationStore={this.props.translationStore}
-                                            settingsStore={this.props.settingsStore} />
-                })}
-        
-                <Button className="m-category-row__add-button"
-                        a11yLabel="Add new translation"
-                        textLabel="Add new"
-                        onClick={this.onAddTranslationButtonClick} />
-            </div>
+                <div>
+                    {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
+                        return <TranslationCard key={id}
+                                                translation={trans}
+                                                translationStore={this.props.translationStore}
+                                                settingsStore={this.props.settingsStore} />
+                    })}
+            
+                    <Button className="m-category-row__add-button"
+                            a11yLabel="Add new translation"
+                            textLabel="Add new"
+                            onClick={this.onAddTranslationButtonClick} />
+                </div>
+
+            </section>
         );
     }
 }

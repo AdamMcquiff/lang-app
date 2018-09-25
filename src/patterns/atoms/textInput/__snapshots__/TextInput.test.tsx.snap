@@ -13,12 +13,14 @@ exports[`TextInput renders without crashing with all props 1`] = `
   <span
     aria-hidden={true}
     className="a-text-input__text-label"
+    hidden={false}
   >
     Some label
   </span>
   <input
-    className="a-text-input__field"
+    className="a-text-input__field "
     onChange={[MockFunction]}
+    placeholder=""
     type="text"
   />
 </label>
@@ -37,11 +39,13 @@ exports[`TextInput renders without crashing with no props 1`] = `
   <span
     aria-hidden={true}
     className="a-text-input__text-label"
+    hidden={false}
   >
     Give me a label
   </span>
   <input
-    className="a-text-input__field"
+    className="a-text-input__field "
+    placeholder=""
     type="text"
   />
 </label>

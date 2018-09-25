@@ -2,7 +2,7 @@ $muli: 'Muli', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 $base-font-size: 1rem;
-$base-line-height: 2 * $base-font-size;
+$base-line-height: 1.5 * $base-font-size;
 
 $type-settings: (
     -1: (
@@ -19,7 +19,7 @@ $type-settings: (
     ),
     2: (
         font-size: 1.778rem,
-        line-height: $base-line-height * 2
+        line-height: $base-line-height * 1.9
     )
 );
 

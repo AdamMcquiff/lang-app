@@ -103,6 +103,7 @@ exports[`App renders without crashing 1`] = `
         },
         "translationCategoryStore": TranslationCategoryStore {
           "create": [Function],
+          "delete": [Function],
           "list": [Function],
           "rootStore": [Circular],
           "service": TranslationCategoryService {},
@@ -255,6 +256,7 @@ exports[`App renders without crashing 1`] = `
         },
         "translationCategoryStore": TranslationCategoryStore {
           "create": [Function],
+          "delete": [Function],
           "list": [Function],
           "rootStore": [Circular],
           "service": TranslationCategoryService {},

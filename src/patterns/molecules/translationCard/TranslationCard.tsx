@@ -45,20 +45,18 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
 
                 <label className="m-translation-card__native-field-label">
                     {this.props.settingsStore.settings.native_lang}
-                    <input type="text" 
-                           value={this.state.native_word} 
-                           className="m-translation-card__native-field-input"
-                           onChange={this.onNativeTranslationFieldTextChange} />
+                    <textarea className="m-translation-card__native-field-input"
+                              onChange={this.onNativeTranslationFieldTextChange}
+                              value={this.state.native_word} />
                 </label>
 
                 <hr />
                 
                 <label className="m-translation-card__translated-field-label">
                     {this.props.settingsStore.settings.translated_lang}
-                    <input type="text" 
-                           value={this.state.translated_word} 
-                           className="m-translation-card__translated-field-input"
-                           onChange={this.onTranslationFieldTextChange} />
+                    <textarea className="m-translation-card__translated-field-input"
+                              onChange={this.onTranslationFieldTextChange}
+                              value={this.state.translated_word} />
                 </label>
             </div>
         );

@@ -7,6 +7,7 @@
 
   h2 {
     @include type-setting(1);
+    line-height: 2.5rem;
     font-weight: 600;
   }
 
@@ -19,6 +20,7 @@
 
   li {
     @include type-setting(0);
+    line-height: 2rem;
     position: relative;
 
     button {

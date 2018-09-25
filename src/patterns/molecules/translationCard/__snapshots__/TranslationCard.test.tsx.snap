@@ -13,10 +13,9 @@ exports[`TranslationCard renders without crashing with all props 1`] = `
   <label
     className="m-translation-card__native-field-label"
   >
-    <input
+    <textarea
       className="m-translation-card__native-field-input"
       onChange={[Function]}
-      type="text"
       value="Hello"
     />
   </label>
@@ -24,10 +23,9 @@ exports[`TranslationCard renders without crashing with all props 1`] = `
   <label
     className="m-translation-card__translated-field-label"
   >
-    <input
+    <textarea
       className="m-translation-card__translated-field-input"
       onChange={[Function]}
-      type="text"
       value="Hallo"
     />
   </label>

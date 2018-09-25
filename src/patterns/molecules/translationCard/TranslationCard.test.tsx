@@ -27,12 +27,12 @@ describe('TranslationCard', () => {
     it('renders with the correct default values in input fields', () => {
         const component = mount(<TranslationCard {...props} />);
         const nativeInputDefaultValue = component
-            .find('input.m-translation-card__native-field-input')
+            .find('textarea.m-translation-card__native-field-input')
             .props()
             .value;
 
         const translatedInputDefaultValue = component
-            .find('input.m-translation-card__translated-field-input')
+            .find('textarea.m-translation-card__translated-field-input')
             .props()
             .value;
             
@@ -45,19 +45,19 @@ describe('TranslationCard', () => {
         const newValue = "Some new value";
 
         expect(component
-            .find('input.m-translation-card__translated-field-input')
-            .getDOMNode()
-            .getAttribute('value')
+            .find('textarea.m-translation-card__translated-field-input')
+            .props()
+            .value
         ).toEqual(translation.translated_word);   
 
         component
-            .find('.m-translation-card__translated-field-input')
+            .find('textarea.m-translation-card__translated-field-input')
             .simulate('change', { target: { value: newValue } });
 
         expect(component
-            .find('input.m-translation-card__translated-field-input')
-            .getDOMNode()
-            .getAttribute('value')
+            .find('textarea.m-translation-card__translated-field-input')
+            .props()
+            .value
         ).toEqual(newValue);
     });
 
@@ -66,19 +66,19 @@ describe('TranslationCard', () => {
         const newValue = "Some new value";
 
         expect(component
-            .find('input.m-translation-card__native-field-input')
-            .getDOMNode()
-            .getAttribute('value')
+            .find('textarea.m-translation-card__native-field-input')
+            .props()
+            .value
         ).toEqual(translation.native_word);
         
         component
-            .find('.m-translation-card__native-field-input')
+            .find('textarea.m-translation-card__native-field-input')
             .simulate('change', { target: { value: newValue } });
 
         expect(component
-            .find('input.m-translation-card__native-field-input')
-            .getDOMNode()
-            .getAttribute('value')
+            .find('textarea.m-translation-card__native-field-input')
+            .props()
+            .value
         ).toEqual(newValue);
     });
 });

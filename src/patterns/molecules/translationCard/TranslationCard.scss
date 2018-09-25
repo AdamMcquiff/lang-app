@@ -2,9 +2,11 @@
     background-color: $lightest-blue;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-    padding: 1.25em;
+    padding: 1.25em 1.125em 1.5em;
 
+    textarea,
     input {
+        font-family: $muli;
         font-size: 1.75em;
         display: block;
         border: 0;
@@ -12,6 +14,7 @@
         background-color: transparent;
         color: $darkest-blue;
         width: 100%;
+        resize: none;
     }
 
     label {

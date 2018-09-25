@@ -4,18 +4,25 @@ exports[`Header renders without crashing with all props 1`] = `
 <header
   className="o-header Some class"
 >
-  <h2>
-    Categories
-  </h2>
-  <ul />
-  <TextForm
-    buttonA11yLabel="Label me."
-    buttonTextLabel="Label me."
-    hasButton={false}
-    inputLabel="New Category"
-    onSubmit={[Function]}
-    onTextChange={[Function]}
-  />
+  <section
+    className="o-header__categories"
+  >
+    <h2>
+      Categories
+    </h2>
+    <ul />
+    <TextForm
+      buttonA11yLabel="Label me."
+      buttonTextLabel="Label me."
+      hasBackground={false}
+      hasButton={false}
+      hasLabel={false}
+      inputLabel="New Category"
+      onSubmit={[Function]}
+      onTextChange={[Function]}
+      placeholder="New Category"
+    />
+  </section>
 </header>
 `;
 
@@ -23,17 +30,24 @@ exports[`Header renders without crashing with required props 1`] = `
 <header
   className="o-header undefined"
 >
-  <h2>
-    Categories
-  </h2>
-  <ul />
-  <TextForm
-    buttonA11yLabel="Label me."
-    buttonTextLabel="Label me."
-    hasButton={false}
-    inputLabel="New Category"
-    onSubmit={[Function]}
-    onTextChange={[Function]}
-  />
+  <section
+    className="o-header__categories"
+  >
+    <h2>
+      Categories
+    </h2>
+    <ul />
+    <TextForm
+      buttonA11yLabel="Label me."
+      buttonTextLabel="Label me."
+      hasBackground={false}
+      hasButton={false}
+      hasLabel={false}
+      inputLabel="New Category"
+      onSubmit={[Function]}
+      onTextChange={[Function]}
+      placeholder="New Category"
+    />
+  </section>
 </header>
 `;

@@ -1,3 +1,50 @@
 .m-category-row {
-  
+    font-family: $muli;
+    color: $white;
+    margin: { bottom: 2em; }
+    
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    
+    
+    header {
+        border-right: 1px solid rgba($darker-blue, .5);
+        margin: { right: 2em; }
+
+        h2 {
+            @include type-setting(2);
+        }
+    
+        p {
+            @include type-setting(0);
+        }
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: .75em;
+
+        @media screen and (min-width: 1240px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__add-button {
+        cursor: pointer;
+        font-family: $muli;
+        font-size: 1em;
+        background-color: transparent;
+        border: 2px dashed $lighter-blue;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        color: $white;
+        min-height: 12.5em;
+        transition: background-color .3s ease;
+
+        &:hover,
+        &:focus {
+            background-color: rgba($lightest-blue, .5)
+        }
+    }
 }

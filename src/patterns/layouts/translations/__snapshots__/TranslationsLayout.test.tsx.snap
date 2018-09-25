@@ -50,6 +50,7 @@ exports[`TranslationLayout renders without crashing with all props 1`] = `
           "settingsStore": [Circular],
           "translationCategoryStore": TranslationCategoryStore {
             "create": [Function],
+            "delete": [Function],
             "list": [Function],
             "rootStore": [Circular],
             "service": TranslationCategoryService {},
@@ -368,6 +369,7 @@ exports[`TranslationLayout renders without crashing with all props 1`] = `
           },
           "translationCategoryStore": TranslationCategoryStore {
             "create": [Function],
+            "delete": [Function],
             "list": [Function],
             "rootStore": [Circular],
             "service": TranslationCategoryService {},
@@ -544,6 +546,7 @@ exports[`TranslationLayout renders without crashing with only required props 1`]
           "settingsStore": [Circular],
           "translationCategoryStore": TranslationCategoryStore {
             "create": [Function],
+            "delete": [Function],
             "list": [Function],
             "rootStore": [Circular],
             "service": TranslationCategoryService {},
@@ -862,6 +865,7 @@ exports[`TranslationLayout renders without crashing with only required props 1`]
           },
           "translationCategoryStore": TranslationCategoryStore {
             "create": [Function],
+            "delete": [Function],
             "list": [Function],
             "rootStore": [Circular],
             "service": TranslationCategoryService {},

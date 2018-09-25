@@ -9,8 +9,11 @@ exports[`TextForm renders without crashing with all props 1`] = `
   >
     <TextInput
       a11yLabel="Some label"
+      hasBackground={true}
+      hasLabel={true}
       onClick={[Function]}
       onTextChange={[MockFunction]}
+      placeholder=""
       textLabel="Some label"
     />
     <Button
@@ -32,8 +35,11 @@ exports[`TextForm renders without crashing with only required props 1`] = `
   >
     <TextInput
       a11yLabel="Some label"
+      hasBackground={true}
+      hasLabel={true}
       onClick={[Function]}
       onTextChange={[Function]}
+      placeholder=""
       textLabel="Some label"
     />
     <Button
