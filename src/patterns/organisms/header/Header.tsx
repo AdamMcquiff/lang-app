@@ -21,6 +21,10 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     }
 
     public onAddCategorySubmit = () => {
+        if (this.state.addCategoryTextValue === '') {
+            return;
+        }
+
         this.props.store.translationCategoryStore.create({ 
             title: this.state.addCategoryTextValue 
         });
@@ -33,23 +37,28 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     public render() {
         return (
             <header className={'o-header ' + this.props.className}>
-                <h2>Categories</h2>
-                
-                <ul>
-                    {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
-                        return <li key={id}>
-                            {category.title}
-                        </li>
-                    })}
-                </ul>
+                <section className="o-header__categories">
+                    <h2>Categories</h2>
+                    
+                    <div className="o-header__categories__body">
+                        <ul>
+                            {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
+                                return <li key={id}>
+                                    <button aria-label={'Delete ' + category.title} />
+                                    {category.title}
+                                </li>
+                            })}
+                        </ul>
 
-                <TextForm hasButton={false}
-                          hasBackground={false}
-                          hasLabel={false}
-                          inputLabel="New Category" 
-                          placeholder="New Category"
-                          onSubmit={this.onAddCategorySubmit}
-                          onTextChange={this.onAddCategoryTextChange}/>
+                        <TextForm hasButton={false}
+                                  hasBackground={false}
+                                  hasLabel={false}
+                                  inputLabel="New Category" 
+                                  placeholder="New Category"
+                                  onSubmit={this.onAddCategorySubmit}
+                                  onTextChange={this.onAddCategoryTextChange}/>
+                    </div>
+                </section>
             </header>
         )
     }
