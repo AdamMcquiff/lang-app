@@ -8,7 +8,8 @@
     
     
     header {
-        border-right: 1px solid rgba($darker-blue, .5);
+        @include gradient-border($darker-blue);
+        border-right: 1px solid;
         margin: { right: 2em; }
 
         h2 {

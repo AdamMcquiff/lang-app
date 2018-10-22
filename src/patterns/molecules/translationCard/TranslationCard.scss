@@ -6,6 +6,7 @@
 
     textarea,
     input {
+        @include placeholder { color: rgba($dark-blue, .4); }
         font-family: $muli;
         font-size: 1.75em;
         display: block;

@@ -21,3 +21,11 @@
         @content;
     }
 }
+
+@mixin gradient-border($colour) {
+    -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba($colour, .5)), to(rgba($colour, 0))) 1 100%;
+    -webkit-border-image: -webkit-linear-gradient(rgba($colour, 0.3), rgba($colour, 0.5), rgba($colour, 0.6), rgba($colour, 0)) 1 100%;
+    -moz-border-image: -moz-linear-gradient(rgba($colour, 0.3), rgba($colour, 0.5), rgba($colour, 0.6), rgba($colour, 0)) 1 100%;    
+    -o-border-image: -o-linear-gradient(rgba($colour, 0.3), rgba($colour, 0.5), rgba($colour, 0.6), rgba($colour, 0)) 1 100%;
+    border-image: linear-gradient(to bottom, rgba($colour, 0.3), rgba($colour, 0.5), rgba($colour, 0.6), rgba($colour, 0)) 1 100%;
+}
