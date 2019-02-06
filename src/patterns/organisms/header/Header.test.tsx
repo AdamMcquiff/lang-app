@@ -34,6 +34,24 @@ describe('Header', () => {
         expect(state .addCategoryTextValue).toEqual(newValue); 
     });
 
+    it('does not create new TranslationCategory on form submit when field is empty', (done) => {
+        const component = mount(<Header {...props} />);
+        const instance = component.instance() as Header;
+        const onAddCategorySubmitMock = jest.spyOn<any, any>(instance, 'onAddCategorySubmit');
+
+        expect(onAddCategorySubmitMock).toHaveBeenCalledTimes(0);
+        expect(component.props().store.translationCategoryStore.translationCategories.length).toEqual(0);
+
+        component
+            .find('form')
+            .simulate('keydown', { key: 'Enter' });
+
+        when(() => component.props().store.translationCategoryStore.translationCategories.length === 0, () => {
+            expect(component.props().store.translationCategoryStore.translationCategories.length).toEqual(0);
+            done();
+        });
+    });
+
     it('creates new TranslationCategory on form submit', (done) => {
         const component = mount(<Header {...props} />);
         const instance = component.instance() as Header;
@@ -41,6 +59,12 @@ describe('Header', () => {
 
         expect(onAddCategorySubmitMock).toHaveBeenCalledTimes(0);
         expect(component.props().store.translationCategoryStore.translationCategories.length).toEqual(0);
+
+        const newValue = "some value";
+
+        component
+            .find('input')
+            .simulate('change', { target: { value: newValue }});
 
         component
             .find('form')
