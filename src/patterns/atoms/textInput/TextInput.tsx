@@ -34,10 +34,11 @@ class TextInput extends React.Component<ITextInputProps> {
                     {this.props.textLabel}
                 </span>
 
-                <input className={'a-text-input__field ' + (!this.props.hasBackground ? 'a-text-input__field--transparent' : '')}
+                <input className={`a-text-input__field ${(!this.props.hasBackground ? 'a-text-input__field--transparent' : '')}`}
                        onChange={this.props.onTextChange}
                        placeholder={this.props.placeholder}
-                       type="text" />
+                       type="text" 
+                />
             </label>
         )
     }

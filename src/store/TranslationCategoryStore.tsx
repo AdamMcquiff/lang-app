@@ -28,12 +28,9 @@ class TranslationCategoryStore {
 
     public delete = (category: ITranslationCategoryModel) => {
         this.service.delete(category).then(() => {
-            this.translationCategories = this.translationCategories.filter(item => {
-                if (item.id !== category.id) {
-                    return item;
-                }
-                return false;
-            });
+            this.translationCategories = this.translationCategories.filter(
+                item => item.id !== category.id ? item : false
+            );
         });
     }
 }

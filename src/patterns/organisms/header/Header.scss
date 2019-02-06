@@ -1,56 +1,56 @@
 .o-header {
-  background-color: $darker-blue;
-  font-family: $muli;
-  color: $white;
-  padding: 1em;
-  min-height: 100vh;
+    background-color: $darker-blue;
+    font-family: $muli;
+    color: $white;
+    padding: 1em;
+    min-height: 100vh;
 
-  h2 {
-    @include type-setting(1);
-    line-height: 2.5rem;
-    font-weight: 600;
-  }
-
-  &__categories {
-    > ul,
-    > div {
-      padding: { left: 1.75em; }
+    h2 {
+        @include type-setting(1);
+        line-height: 2.5rem;
+        font-weight: 600;
     }
-  }
 
-  li {
-    @include type-setting(0);
-    line-height: 2rem;
-    position: relative;
-
-    button {
-      font-size: 1em;
-      background-color: transparent;
-      padding: 0;
-      background-image: url('/img/icons/cross.svg');
-      border: 0;
-      width: 1em;
-      height: 1em;
-      left: -1.5em;
-      top: 27.5%;
-      display: inline-block;
-      position: absolute;
-      opacity: .75;
-      transition: opacity .3s ease;
-
-      &:hover,
-      &:focus {
-        opacity: 1;
-      }
-
-      &:active {
-        filter: brightness(110%);
-      }
+    &__categories {
+        > ul,
+        > div {
+            padding: { left: 1.75em; }
+        }
     }
-  }
 
-  input {
-    padding: .325em 0 .325em .5em;
-    margin: .25em 0 0 -.5em;
-  }
+    li {
+        @include type-setting(0);
+        line-height: 2rem;
+        position: relative;
+
+        button {
+            font-size: 1em;
+            background-color: transparent;
+            padding: 0;
+            background-image: url('/img/icons/cross.svg');
+            border: 0;
+            width: 1em;
+            height: 1em;
+            left: -1.5em;
+            top: 27.5%;
+            display: inline-block;
+            position: absolute;
+            opacity: .75;
+            transition: opacity .3s ease;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+
+            &:active {
+                filter: brightness(110%);
+            }
+        }
+    }
+
+    input {
+        padding: .325em 0 .325em .5em;
+        margin: .25em 0 0 -.5em;
+    }
 }

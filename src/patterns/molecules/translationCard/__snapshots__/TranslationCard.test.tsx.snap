@@ -11,6 +11,10 @@ exports[`TranslationCard renders without crashing with all props 1`] = `
     textLabel="Delete"
   />
   <label
+    aria-label="
+                            Original () 
+                            
+                       "
     className="m-translation-card__native-field-label"
   >
     <textarea
@@ -22,6 +26,10 @@ exports[`TranslationCard renders without crashing with all props 1`] = `
   </label>
   <hr />
   <label
+    aria-label="
+                            Translation () 
+                            
+                       "
     className="m-translation-card__translated-field-label"
   >
     <textarea

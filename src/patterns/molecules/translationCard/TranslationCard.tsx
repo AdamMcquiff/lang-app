@@ -25,11 +25,17 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
     }
 
     public onNativeTranslationFieldTextChange = (event: any) => {
-        this.setState({ native_word: event.target.value }, () => this._updateTranslation());
+        this.setState(
+            { native_word: event.target.value }, 
+            () => this._updateTranslation()
+        );
     }
 
     public onTranslationFieldTextChange = (event: any) => {
-        this.setState({ translated_word: event.target.value }, () => this._updateTranslation());
+        this.setState(
+            { translated_word: event.target.value }, 
+            () => this._updateTranslation()
+        );
     }
 
     public onDeleteTranslationButtonClick = () => {
@@ -39,9 +45,10 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
     public render() {
         return (
             <div className="m-translation-card">
-                <Button a11yLabel={"Delete translation of " + this.props.translation.native_word}
+                <Button a11yLabel={`Delete translation of ${this.props.translation.native_word}`}
                         textLabel="Delete"
-                        onClick={this.onDeleteTranslationButtonClick} />
+                        onClick={this.onDeleteTranslationButtonClick} 
+                />
 
                 <label className="m-translation-card__native-field-label" 
                        aria-label={`
@@ -51,7 +58,7 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
                     {this.props.settingsStore.settings.native_lang}
 
                     <textarea className="m-translation-card__native-field-input"
-                              placeholder={this.props.settingsStore.settings.native_lang + ' translation'}
+                              placeholder={`${this.props.settingsStore.settings.native_lang} translation`}
                               onChange={this.onNativeTranslationFieldTextChange}
                               value={this.state.native_word} 
                     />
@@ -67,7 +74,7 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
                     {this.props.settingsStore.settings.translated_lang}
 
                     <textarea className="m-translation-card__translated-field-input"
-                              placeholder={this.props.settingsStore.settings.translated_lang + ' translation'}
+                              placeholder={`${this.props.settingsStore.settings.translated_lang} translation`}
                               onChange={this.onTranslationFieldTextChange}
                               value={this.state.translated_word}                               
                     />

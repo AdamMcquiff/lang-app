@@ -39,12 +39,9 @@ class TranslationStore {
 
     public delete = (translation: ITranslationModel) => {
         this.service.delete(translation).then(() => {
-            this.translations = this.translations.filter(item => {
-                if (item.id !== translation.id) {
-                    return item;
-                }
-                return false;
-            });
+            this.translations = this.translations.filter(item => 
+                item.id !== translation.id ? item : false
+            );
         });
     }
 }

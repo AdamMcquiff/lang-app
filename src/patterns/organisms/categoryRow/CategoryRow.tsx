@@ -35,7 +35,7 @@ class CategoryRow extends React.Component<ICategoryProps> {
             translationLabel = 'translations';
         }
 
-        return this.totalNumberOfTranslations + " " + translationLabel;
+        return `${this.totalNumberOfTranslations} ${translationLabel}`;
     }
 
     public onAddTranslationButtonClick = () => {
@@ -50,26 +50,30 @@ class CategoryRow extends React.Component<ICategoryProps> {
         return (
             <section className="m-category-row">
                 <header>
-                    <h2>{this.props.category.title}</h2>
+                    <h2>
+                        {this.props.category.title}
+                    </h2>
                     <p>
                         {this.numberOfTranslationsLabel}
                     </p>
                 </header>
 
                 <div>
-                    {this.filteredTranslations.map((trans: ITranslationModel, id: number) => {
-                        return <TranslationCard key={id}
-                                                translation={trans}
-                                                translationStore={this.props.translationStore}
-                                                settingsStore={this.props.settingsStore} />
-                    })}
+                    {this.filteredTranslations.map((trans: ITranslationModel, id: number) => 
+                        <TranslationCard 
+                            key={id}
+                            translation={trans}
+                            translationStore={this.props.translationStore}
+                            settingsStore={this.props.settingsStore} 
+                        />
+                    )}
             
                     <Button className="m-category-row__add-button"
                             a11yLabel="Add new translation"
                             textLabel="Add new"
-                            onClick={this.onAddTranslationButtonClick} />
+                            onClick={this.onAddTranslationButtonClick}         
+                    />
                 </div>
-
             </section>
         );
     }

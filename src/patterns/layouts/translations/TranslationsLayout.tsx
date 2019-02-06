@@ -14,13 +14,14 @@ interface ITranslationInterface {
 class TranslationsLayout extends React.Component<ITranslationInterface> {
     public render() {
         return (
-            <main className={'l-translations ' + this.props.className}>
-                {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
-                    return <CategoryRow key={id} 
-                                        category={category} 
-                                        settingsStore={this.props.store.settingsStore}
-                                        translationStore={this.props.store.translationStore} />
-                })}
+            <main className={`l-translations ${this.props.className}`}>
+                {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => 
+                    <CategoryRow key={id} 
+                        category={category} 
+                        settingsStore={this.props.store.settingsStore}
+                        translationStore={this.props.store.translationStore} 
+                    />
+                )}
             </main>
         )
     }

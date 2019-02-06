@@ -36,29 +36,28 @@ class TextForm extends React.Component<ITextFormProps> {
                                placeholder={this.props.placeholder}
                                hasLabel={this.props.hasLabel}
                                hasBackground={this.props.hasBackground}
-                               onTextChange={this.props.onTextChange} />
+                               onTextChange={this.props.onTextChange} 
+                    />
                             
                     {this.props.hasButton &&
                         <Button a11yLabel={this.props.buttonA11yLabel} 
                                 textLabel={this.props.buttonTextLabel}
-                                onClick={this.props.onSubmit} />
+                                onClick={this.props.onSubmit} 
+                        />
                     }   
                 </form>
             </div>
         )
     }
 
-    private onSubmit = (e: any) => {
-        if (e.key !== 'Enter') {
+    private onSubmit = (event: any) => {
+        if (event.key !== 'Enter') {
             return;
         }
-        
-        const input = Object.assign({}, e);
-
-        e.preventDefault();
+    
+        event.preventDefault();
         this.props.onSubmit();
-        
-        input.target.value = "";
+        event.target.value = "";
     }
 }
 
