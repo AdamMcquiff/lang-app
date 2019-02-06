@@ -11,13 +11,13 @@ interface IHeaderProps {
 }
 
 interface IHeaderState {
-    addCategoryTextValue: string
+    addCategoryTextValue: string,
 }
 
 @observer
 class Header extends React.Component<IHeaderProps, IHeaderState> {
     public state: IHeaderState = {
-        addCategoryTextValue: ''
+        addCategoryTextValue: '',
     }
 
     public onAddCategorySubmit = () => {
@@ -40,7 +40,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         const category = this.props.store.translationCategoryStore.translationCategories.find(item =>
             parseInt(event.target.value, 10) === item.id
         );
-
+        
         if (category) {
             this.props.store.translationCategoryStore.delete(category);
         }
@@ -53,15 +53,15 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                     <h2>Categories</h2>
 
                     <ul>
-                        {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) => {
-                            return <li key={id}>
-                                <button aria-label={'Delete ' + category.title} 
+                        {this.props.store.translationCategoryStore.translationCategories.map((category: ITranslationCategoryModel, id: number) =>
+                            <li key={id}>
+                                <button aria-label={`Delete ${category.title} category`} 
                                         value={category.id}
-                                        onClick={this.onDeleteTranslationCategoryButtonClick} />
-                                        
+                                        onClick={this.onDeleteTranslationCategoryButtonClick} 
+                                />
                                 {category.title}
                             </li>
-                        })}
+                        )}
                     </ul>
 
                     <TextForm hasButton={false}
@@ -70,7 +70,8 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
                               inputLabel="New Category" 
                               placeholder="New Category"
                               onSubmit={this.onAddCategorySubmit}
-                              onTextChange={this.onAddCategoryTextChange} />
+                              onTextChange={this.onAddCategoryTextChange} 
+                    />
                 </section>
             </header>
         )

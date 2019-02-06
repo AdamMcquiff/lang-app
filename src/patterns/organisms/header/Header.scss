@@ -14,7 +14,7 @@
   &__categories {
     > ul,
     > div {
-      padding: { left: 1.5em; }
+      padding: { left: 1.75em; }
     }
   }
 
@@ -29,10 +29,10 @@
       padding: 0;
       background-image: url('/img/icons/cross.svg');
       border: 0;
-      width: .75em;
-      height: .75em;
-      left: -1.25em;
-      top: 32.5%;
+      width: 1em;
+      height: 1em;
+      left: -1.5em;
+      top: 27.5%;
       display: inline-block;
       position: absolute;
       opacity: .75;

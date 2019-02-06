@@ -43,22 +43,34 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
                         textLabel="Delete"
                         onClick={this.onDeleteTranslationButtonClick} />
 
-                <label className="m-translation-card__native-field-label">
+                <label className="m-translation-card__native-field-label" 
+                       aria-label={`
+                            Original (${this.props.settingsStore.settings.native_lang}) 
+                            ${!this.state.native_word ? 'Please provide an original word' : ''}
+                       `}>
                     {this.props.settingsStore.settings.native_lang}
+
                     <textarea className="m-translation-card__native-field-input"
                               placeholder={this.props.settingsStore.settings.native_lang + ' translation'}
                               onChange={this.onNativeTranslationFieldTextChange}
-                              value={this.state.native_word} />
+                              value={this.state.native_word} 
+                    />
                 </label>
 
                 <hr />
                 
-                <label className="m-translation-card__translated-field-label">
+                <label className="m-translation-card__translated-field-label"
+                       aria-label={`
+                            Translation (${this.props.settingsStore.settings.translated_lang}) 
+                            ${!this.state.native_word ? 'Please provide a translation' : ''}
+                       `}>
                     {this.props.settingsStore.settings.translated_lang}
+
                     <textarea className="m-translation-card__translated-field-input"
                               placeholder={this.props.settingsStore.settings.translated_lang + ' translation'}
                               onChange={this.onTranslationFieldTextChange}
-                              value={this.state.translated_word} />
+                              value={this.state.translated_word}                               
+                    />
                 </label>
             </div>
         );
