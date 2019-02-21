@@ -1,6 +1,6 @@
 import { mount, shallow } from 'enzyme';
 import * as React from 'react';
-import TextForm from './TextForm';
+import { TextForm } from './TextForm';
 
 describe('TextForm', () => {
     const props = {

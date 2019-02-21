@@ -1,7 +1,7 @@
 import { mount, shallow } from 'enzyme';
 import { when } from 'mobx';
 import * as React from 'react';
-import RootStore from '../../../store/RootStore';
+import { RootStore } from '../../../store/RootStore';
 import { Header, IHeaderState } from './Header';
 
 const store = new RootStore();

@@ -1,12 +1,12 @@
 import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import ITranslationModel from '../../../models/Translation';
-import ITranslationCategoryModel from '../../../models/TranslationCategory';
-import SettingsStore from '../../../store/SettingsStore';
-import TranslationStore from '../../../store/TranslationStore';
-import Button from '../../atoms/button/Button';
-import TranslationCard from '../../molecules/translationCard/TranslationCard';
+import { ITranslationModel } from '../../../models/Translation';
+import { ITranslationCategoryModel } from '../../../models/TranslationCategory';
+import { SettingsStore } from '../../../store/SettingsStore';
+import { TranslationStore } from '../../../store/TranslationStore';
+import { Button } from '../../atoms/button/Button';
+import { TranslationCard } from '../../molecules/translationCard/TranslationCard';
 import './CategoryRow.scss';
 
 interface ICategoryProps {
@@ -16,7 +16,7 @@ interface ICategoryProps {
 }
 
 @observer
-class CategoryRow extends React.Component<ICategoryProps> {
+export class CategoryRow extends React.Component<ICategoryProps> {
     @computed get filteredTranslations(): ITranslationModel[] {
         return this.props.translationStore.translations.filter(
             (translation: ITranslationModel) => translation.categoryId === this.props.category.id
@@ -78,5 +78,3 @@ class CategoryRow extends React.Component<ICategoryProps> {
         );
     }
 }
-
-export default CategoryRow;

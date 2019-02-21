@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
-import RootStore from '../../../store/RootStore';
-import TranslationsLayout from './TranslationsLayout';
+import { RootStore } from '../../../store/RootStore';
+import { TranslationsLayout } from './TranslationsLayout';
 
 const store = new RootStore();
 store.translationCategoryStore.translationCategories = [{

@@ -1,10 +1,11 @@
 import { observable } from 'mobx';
-import ITranslationCategoryModel from '../models/TranslationCategory';
-import ITranslationCategoryService from '../services/translationCategoriesService/TranslationCategoryServiceInterface';
-import RootStore from './RootStore';
+import { ITranslationCategoryModel } from '../models/TranslationCategory';
+import { ITranslationCategoryService } from '../services/translationCategoriesService/TranslationCategoryServiceInterface';
+import { RootStore } from './RootStore';
 
-class TranslationCategoryStore {
-    @observable public translationCategories: ITranslationCategoryModel[] = [];
+export class TranslationCategoryStore {
+    @observable 
+    public translationCategories: ITranslationCategoryModel[] = [];
 
     public rootStore: RootStore;
     public service: ITranslationCategoryService;
@@ -34,5 +35,3 @@ class TranslationCategoryStore {
         });
     }
 }
-
-export default TranslationCategoryStore;

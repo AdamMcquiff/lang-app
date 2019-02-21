@@ -1,11 +1,11 @@
 import { mount, shallow } from 'enzyme';
 import { when } from 'mobx';
 import * as React from 'react';
-import ITranslationModel from '../../../models/Translation';
-import ITranslationCategoryModel from '../../../models/TranslationCategory';
-import ITranslationService from '../../../services/translationService/TranslationServiceInterface';
-import RootStore from '../../../store/RootStore';
-import CategoryRow from './CategoryRow';
+import { ITranslationModel } from '../../../models/Translation';
+import { ITranslationCategoryModel } from '../../../models/TranslationCategory';
+import { ITranslationService } from '../../../services/translationService/TranslationServiceInterface';
+import { RootStore } from '../../../store/RootStore';
+import { CategoryRow } from './CategoryRow';
 
 const translations = [{
     categoryId: 1,

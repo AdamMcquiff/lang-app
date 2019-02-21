@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import ITranslationCategoryModel from '../../../models/TranslationCategory';
-import RootStore from '../../../store/RootStore';
-import TextForm from '../../molecules/textForm/TextForm';
+import { ITranslationCategoryModel } from '../../../models/TranslationCategory';
+import { RootStore } from '../../../store/RootStore';
+import { TextForm } from '../../molecules/textForm/TextForm';
 import './Header.scss';
 
 interface IHeaderProps {
@@ -10,12 +10,12 @@ interface IHeaderProps {
     className?: string
 }
 
-interface IHeaderState {
+export interface IHeaderState {
     addCategoryTextValue: string,
 }
 
 @observer
-class Header extends React.Component<IHeaderProps, IHeaderState> {
+export class Header extends React.Component<IHeaderProps, IHeaderState> {
     public state: IHeaderState = {
         addCategoryTextValue: '',
     }
@@ -77,5 +77,3 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         )
     }
 }
-
-export { Header, IHeaderState };

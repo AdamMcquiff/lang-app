@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Button from '../../atoms/button/Button';
-import TextInput from '../../atoms/textInput/TextInput';
+import { Button } from '../../atoms/button/Button';
+import { TextInput } from '../../atoms/textInput/TextInput';
 import './TextForm.scss';
 
 interface ITextFormProps {
@@ -15,7 +15,7 @@ interface ITextFormProps {
     onTextChange(e: any): void,
 }
 
-class TextForm extends React.Component<ITextFormProps> {
+export class TextForm extends React.Component<ITextFormProps> {
     public static defaultProps = {
         buttonA11yLabel: 'Label me.',
         buttonTextLabel: 'Label me.',
@@ -60,5 +60,3 @@ class TextForm extends React.Component<ITextFormProps> {
         event.target.value = "";
     }
 }
-
-export default TextForm;

@@ -1,8 +1,8 @@
 import { mount, shallow } from 'enzyme';
 import * as React from 'react';
-import App from './App';
-import RootStore from './store/RootStore';
-
+import { App } from './App';
+import { RootStore } from './store/RootStore';
+ 
 const store: RootStore = new RootStore();
 
 describe('App', () => {

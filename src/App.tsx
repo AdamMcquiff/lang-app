@@ -1,16 +1,16 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import './App.scss';
-import TranslationsLayout from './patterns/layouts/translations/TranslationsLayout';
+import { TranslationsLayout } from './patterns/layouts/translations/TranslationsLayout';
 import { Header } from './patterns/organisms/header/Header';
-import RootStore from './store/RootStore';
+import { RootStore } from './store/RootStore';
 
 interface IAppInterface {
     store: RootStore
 }
 
 @observer
-class App extends React.Component<IAppInterface> {
+export class App extends React.Component<IAppInterface> {
     public componentDidMount() { 
         this._requestApiDataFromServices();
     }
@@ -33,5 +33,3 @@ class App extends React.Component<IAppInterface> {
         this.props.store.translationStore.list();
     }
 }
-
-export default App;

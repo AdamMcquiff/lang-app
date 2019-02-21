@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import ITranslationModel from '../../../models/Translation';
-import SettingsStore from '../../../store/SettingsStore';
-import TranslationStore from '../../../store/TranslationStore';
-import Button from '../../atoms/button/Button';
+import { ITranslationModel } from '../../../models/Translation';
+import { SettingsStore } from '../../../store/SettingsStore';
+import { TranslationStore } from '../../../store/TranslationStore';
+import { Button } from '../../atoms/button/Button';
 import './TranslationCard.scss';
 
 interface ITranslationCardProps {
@@ -18,7 +18,7 @@ interface ITranslationCardState {
 }
 
 @observer
-class TranslationCard extends React.Component<ITranslationCardProps, ITranslationCardState> {
+export class TranslationCard extends React.Component<ITranslationCardProps, ITranslationCardState> {
     public state: ITranslationCardState = {
         native_word: this.props.translation.native_word,
         translated_word: this.props.translation.translated_word,
@@ -92,5 +92,3 @@ class TranslationCard extends React.Component<ITranslationCardProps, ITranslatio
         );
     }
 }
-
-export default TranslationCard;

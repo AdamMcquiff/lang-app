@@ -1,10 +1,11 @@
 import { observable } from 'mobx';
-import ITranslationModel from '../models/Translation';
-import ITranslationService from '../services/translationService/TranslationServiceInterface';
-import RootStore from './RootStore';
-
-class TranslationStore {
-    @observable public translations: ITranslationModel[] = [];
+import { ITranslationModel } from '../models/Translation';
+import { ITranslationService } from '../services/translationService/TranslationServiceInterface';
+import { RootStore } from './RootStore';
+ 
+export class TranslationStore {
+    @observable 
+    public translations: ITranslationModel[] = [];
 
     public rootStore: RootStore;
     public service: ITranslationService;
@@ -45,5 +46,3 @@ class TranslationStore {
         });
     }
 }
-
-export default TranslationStore;

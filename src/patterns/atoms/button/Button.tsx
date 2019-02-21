@@ -8,7 +8,7 @@ interface IButtonProps {
     onClick(): void
 }
 
-class Button extends React.Component<IButtonProps> {
+export class Button extends React.Component<IButtonProps> {
     public static defaultProps = {
         a11yLabel: 'Click me',
         className: '',
@@ -26,5 +26,3 @@ class Button extends React.Component<IButtonProps> {
         )
     }
 }
-
-export default Button;

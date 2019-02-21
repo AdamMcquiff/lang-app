@@ -1,9 +1,7 @@
-import ITranslationCategoryModel from '../../models/TranslationCategory';
+import { ITranslationCategoryModel } from '../../models/TranslationCategory';
 
-interface ITranslationCategoryService {
+export interface ITranslationCategoryService {
     list(): Promise<ITranslationCategoryModel[]>,
     create(translation: ITranslationCategoryModel): Promise<ITranslationCategoryModel>,
     delete(translation: ITranslationCategoryModel): Promise<ITranslationCategoryModel>
 }
-
-export default ITranslationCategoryService;

@@ -1,6 +1,6 @@
 import { mount, shallow } from 'enzyme';
 import * as React from 'react';
-import TextInput from './TextInput';
+import { TextInput } from './TextInput';
 
 describe('TextInput', () => {
     const props = {

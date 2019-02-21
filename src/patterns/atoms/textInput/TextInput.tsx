@@ -10,7 +10,7 @@ interface ITextInputProps {
     onTextChange?: (e: any) => void
 }
 
-class TextInput extends React.Component<ITextInputProps> {
+export class TextInput extends React.Component<ITextInputProps> {
     public static defaultProps = {
         a11yLabel: 'Give me a label',
         hasBackground: true,
@@ -43,5 +43,3 @@ class TextInput extends React.Component<ITextInputProps> {
         )
     }
 }
-
-export default TextInput;

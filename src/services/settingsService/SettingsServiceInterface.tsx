@@ -1,7 +1,5 @@
-import ISettingsModel from '../../models/Settings';
+import { ISettingsModel } from '../../models/Settings';
 
-interface ISettingsService {
+export interface ISettingsService {
     list(): Promise<ISettingsModel>,
 }
-
-export default ISettingsService;

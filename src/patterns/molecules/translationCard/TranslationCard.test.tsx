@@ -1,8 +1,8 @@
 import { mount, shallow } from 'enzyme';
 import * as React from 'react';
-import ITranslationModel from '../../../models/Translation';
-import RootStore from '../../../store/RootStore';
-import TranslationCard from './TranslationCard';
+import { ITranslationModel } from '../../../models/Translation';
+import { RootStore } from '../../../store/RootStore';
+import { TranslationCard } from './TranslationCard';
 
 const rootStore = new RootStore();
 

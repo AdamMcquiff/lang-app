@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import ITranslationCategoryModel from '../../../models/TranslationCategory';
-import RootStore from '../../../store/RootStore';
-import CategoryRow from '../../organisms/categoryRow/CategoryRow';
+import { ITranslationCategoryModel } from '../../../models/TranslationCategory';
+import { RootStore } from '../../../store/RootStore';
+import { CategoryRow } from '../../organisms/categoryRow/CategoryRow';
 import './TranslationsLayout.scss';
 
 interface ITranslationInterface {
@@ -11,7 +11,7 @@ interface ITranslationInterface {
 }
 
 @observer
-class TranslationsLayout extends React.Component<ITranslationInterface> {
+export class TranslationsLayout extends React.Component<ITranslationInterface> {
     public render() {
         return (
             <main className={`l-translations ${this.props.className}`}>
@@ -26,5 +26,3 @@ class TranslationsLayout extends React.Component<ITranslationInterface> {
         )
     }
 }
-
-export default TranslationsLayout;

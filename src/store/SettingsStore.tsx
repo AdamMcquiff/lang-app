@@ -1,10 +1,11 @@
 import { observable } from 'mobx';
-import ISettingsModel from '../models/Settings';
-import ISettingsService from '../services/settingsService/SettingsServiceInterface';
-import RootStore from './RootStore';
+import { ISettingsModel } from '../models/Settings';
+import { ISettingsService } from '../services/settingsService/SettingsServiceInterface';
+import { RootStore } from './RootStore';
 
-class SettingsStore {
-    @observable public settings: ISettingsModel = {
+export class SettingsStore {
+    @observable 
+    public settings: ISettingsModel = {
         native_lang: '',
         translated_lang: ''
     };
@@ -23,5 +24,3 @@ class SettingsStore {
         });
     }
 }
-
-export default SettingsStore;
