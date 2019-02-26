@@ -5,7 +5,7 @@ import { ISettingsService } from './SettingsServiceInterface';
 export class SettingsService implements ISettingsService {
     public list(): Promise<ISettingsModel> {
         return new Promise((resolve, reject) => 
-            axios.get(`http://localhost:3000/settings`) 
+            axios.get(`${process.env.REACT_APP_API_URL}/settings`) 
                 .then(response => resolve(response.data))
                 .catch(error => reject(error))
         );
