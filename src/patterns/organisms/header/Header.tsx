@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
+import { Dialog } from 'src/patterns/molecules/dialog/Dialog';
 import { ITranslationCategoryModel } from '../../../models/TranslationCategory';
 import { RootStore } from '../../../store/RootStore';
 import { TextForm } from '../../molecules/textForm/TextForm';
@@ -12,13 +13,17 @@ interface IHeaderProps {
 
 export interface IHeaderState {
     addCategoryTextValue: string,
+    categoryId: string | undefined,
+    isDisplayingDeleteDialog: boolean
 }
 
 @observer
 export class Header extends React.Component<IHeaderProps, IHeaderState> {
     public state: IHeaderState = {
         addCategoryTextValue: '',
-    }
+        categoryId: '',
+        isDisplayingDeleteDialog: false
+    };
 
     public onAddCategorySubmit = () => {
         if (this.state.addCategoryTextValue === '') {
@@ -30,21 +35,39 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         });
 
         this.setState({ addCategoryTextValue: '' });
-    }
+    };
   
     public onAddCategoryTextChange = (event: any) => {
         this.setState({ addCategoryTextValue: event.target.value });
-    }
+    };
 
-    public onDeleteTranslationCategoryButtonClick = (event: any) => {
+    public handleOnDialogConfirm = () => {
+        if (!this.state.categoryId) {
+            return;
+        }
+
         const category = this.props.store.translationCategoryStore.translationCategories.find(item =>
-            parseInt(event.target.value, 10) === item.id
+            parseInt(this.state.categoryId || '', 10) === item.id
         );
-        
+
         if (category) {
             this.props.store.translationCategoryStore.delete(category);
         }
-    }
+
+        this.closeDialog();
+    };
+
+    public openDialog = (event: any) => {
+
+        this.setState({ 
+            categoryId: event.target.value,
+            isDisplayingDeleteDialog: true 
+        })
+    };
+
+    public closeDialog = () => {
+        this.setState({ isDisplayingDeleteDialog: false });
+    };
 
     public render() {
         return (
@@ -57,7 +80,7 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
                             <li key={id}>
                                 <button aria-label={`Delete ${category.title} category`} 
                                         value={category.id}
-                                        onClick={this.onDeleteTranslationCategoryButtonClick} 
+                                        onClick={this.openDialog}
                                 />
                                 {category.title}
                             </li>
@@ -71,6 +94,14 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
                               placeholder="New Category"
                               onSubmit={this.onAddCategorySubmit}
                               onTextChange={this.onAddCategoryTextChange} 
+                    />
+
+                   <Dialog id="dialog-delete-confirmation"
+                           isOpen={this.state.isDisplayingDeleteDialog} 
+                           title={"Are you sure?"}
+                           body={"Oh no! Removing this translation is irreversible. Continue?"}
+                           onDialogCancel={this.closeDialog} 
+                           onDialogConfirm={this.handleOnDialogConfirm} 
                     />
                 </section>
             </header>

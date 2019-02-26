@@ -15,7 +15,7 @@ export class TextInput extends React.Component<ITextInputProps> {
         a11yLabel: 'Give me a label',
         hasBackground: true,
         hasLabel: true,
-        onClick: () => null,
+        onClick: () => undefined,
         placeholder: '',
         textLabel: 'Give me a label',
     }
@@ -34,7 +34,7 @@ export class TextInput extends React.Component<ITextInputProps> {
                     {this.props.textLabel}
                 </span>
 
-                <input className={`a-text-input__field ${(!this.props.hasBackground ? 'a-text-input__field--transparent' : '')}`}
+                <input className={`a-text-input__field ${!this.props.hasBackground ? 'a-text-input__field--transparent' : ''}`}
                        onChange={this.props.onTextChange}
                        placeholder={this.props.placeholder}
                        type="text" 

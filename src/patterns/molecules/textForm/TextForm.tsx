@@ -29,6 +29,7 @@ export class TextForm extends React.Component<ITextFormProps> {
     
     public render() {
         return (
+            // TODO: add a label to this form.
             <div className="m-text-form">
                 <form onKeyDown={this.onSubmit}>
                     <TextInput textLabel={this.props.inputLabel}

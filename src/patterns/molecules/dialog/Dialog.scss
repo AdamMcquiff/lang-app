@@ -1,0 +1,85 @@
+.m-dialog {
+    border: 0;
+    padding: 0;
+    border-radius: $border-radius;
+    background-color: $lightest-blue;
+    max-width: 300px;
+
+    &__header {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba($lighter-blue, .75);
+
+        h1 {
+            @include type-setting(1);
+            color: $darkest-blue;
+        }
+    }
+
+    &__body {
+        padding: 1rem 1.5rem;
+
+        p {
+            @include type-setting(0);
+            color: $blue;
+        }
+    }
+
+    &__actions {
+        padding: 0 1.5rem 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // TODO: move colours to variables .scss file.
+    &__button {
+        cursor: pointer;
+        color: $white;
+        background-color: #4D9AC9;
+        flex: 1;
+        font-size: 1rem;
+        padding: .5rem 1.5rem;
+        
+        border-radius: $border-radius;
+        border: 0;
+        border-color: #346888;
+        border-style: solid;
+        border-bottom-width: 1px;
+        
+        transition: background-color .3s ease, border-width .3s ease-in-out;
+
+        &:nth-of-type(2n) {
+            margin: { left: .25em; }
+        }
+        
+        &:nth-of-type(2n - 1) {
+            margin: { right: .25em; }
+        }
+    
+        &:hover,
+        &:focus {
+            background-color: darken(#4D9AC9, 15%);
+            border-color: darken(#346888, 15%);
+        }
+
+        &:active {
+            border-bottom-width: 0;
+            border-top-width: 1px;
+        }
+
+        &--confirm {
+            color: $white;
+            background-color: $red;
+            border-color: $dark-red;
+
+            &:hover,
+            &:focus {
+                background-color: darken($red, 15%);
+                border-color: darken($dark-red, 15%);
+            }
+        }
+    }
+
+    &::backdrop {
+        background: rgba($dark-gray, .7);
+    }
+}
